@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     description: 'Tailed monopod robot controller combining Inertial Reorientation and SLIP.',
     longDescription: 'Derived and simulated dynamics for a Simplified Helicopter and a falling cat model. Integrated SLIP models for the Jerboa monopod. Implemented Stance, Flight, and Raibert stepping controllers to achieve stable hopping.',
     tags: ['Robotics', 'Control', 'Dynamics', 'UPenn'],
-    image: '/src/assets/images/project1.png',
+    image: '/images/project1.png',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     description: 'Hybrid systems modeling for Spring Loaded Inverted Pendulums (SLIP).',
     longDescription: 'Derived dynamics for Lossless and Energy-loss SLIP. Extended the model to a realistic 5-bar-linkage design, deriving full dynamics and building custom controllers for multi-jointed locomotion.',
     tags: ['Hybrid Systems', 'Kinematics', 'UPenn'],
-    image: '/src/assets/images/project2.jpg',
+    image: '/images/project2.jpg',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     description: 'Active hopper simulation with linear, air, and virtual electromagnetic springs.',
     longDescription: 'Started with Mass-Spring-Damper mechanics for a bouncing ball with thrust injection. Transitioned to an active pogo-stick hopper with 5-bar-linkage leg kinematics.',
     tags: ['Actuation', 'Stability', 'UPenn'],
-    image: '/src/assets/images/project3.jpg',
+    image: '/images/project3.jpg',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
     description: 'Energy-based control for double-pendulum arm-swinging behavior.',
     longDescription: 'Analyzed LTI systems, energy basins, and stable fixed points. Wrote a systematic controller for double pendulum swinging behavior based on system parameters and joint velocities.',
     tags: ['LTI Systems', 'Dynamics', 'UPenn'],
-    image: '/src/assets/images/project4.jpg',
+    image: '/images/project4.jpg',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     description: 'Full rigid body dynamics modeling for the Rethink Robotics Sawyer manipulator.',
     longDescription: 'Computed homogeneous transformations, Jacobians, and full Lagrangian equations of motion. Calculated Inertial Matrix and total Kinetic Energy for the 7-degree-of-freedom arm.',
     tags: ['Kinematics', 'Jacobians', 'UPenn'],
-    image: '/src/assets/images/project5.png',
+    image: '/images/project5.png',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     description: 'Pyramidal feature detection and image warping based on optical flow estimation.',
     longDescription: 'Implemented a multiscale optical flow estimation function to warp images. Used pyramidal approaches for robust feature detection across varying image scales.',
     tags: ['Computer Vision', 'Perception', 'UPenn'],
-    image: '/src/assets/images/project6.jpg',
+    image: '/images/project6.jpg',
     github: 'https://github.com/meetkumar-doshi'
   },
   {
@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     description: 'Motion controlled, IR targeting robot based on sensor fusion of IMU data.',
     longDescription: 'Final year project involving Accelerometer and Gyroscope sensor fusion. Built a custom motion-controlled platform capable of precise IR targeting and autonomous navigation.',
     tags: ['Embedded Systems', 'Sensor Fusion', 'Robotics'],
-    image: '/src/assets/images/project7.jpg',
+    image: '/images/project7.jpg',
     github: 'https://github.com/meetkumar-doshi'
   }
 ];
@@ -115,7 +115,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Nov 2020',
     credentialId: 'b35b1b71286846b89a51f757a4e90c26',
     link: 'https://credentials.edx.org/credentials/b35b1b71286846b89a51f757a4e90c26/',
-    logo: '/src/assets/images/upenn.svg'
+    logo: '/images/upenn.svg'
   },
   {
     id: 'upenn-loco',
@@ -124,7 +124,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Nov 2020',
     credentialId: 'c787b5f2db7f4609a3916de4e8f377f9',
     link: 'https://courses.edx.org/certificates/c787b5f2db7f4609a3916de4e8f377f9',
-    logo: '/src/assets/images/upenn.svg'
+    logo: '/images/upenn.svg'
   },
   {
     id: 'upenn-vision',
@@ -133,7 +133,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Nov 2020',
     credentialId: '8210341c38354609aa52da60fd61b4e5',
     link: 'https://courses.edx.org/certificates/8210341c38354609aa52da60fd61b4e5',
-    logo: '/src/assets/images/upenn.svg'
+    logo: '/images/upenn.svg'
   },
   {
     id: 'upenn-control',
@@ -142,7 +142,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Oct 2020',
     credentialId: '44eb1890e7c447bab23d084fce3ce9c7',
     link: 'https://courses.edx.org/certificates/44eb1890e7c447bab23d084fce3ce9c7',
-    logo: '/src/assets/images/upenn.svg'
+    logo: '/images/upenn.svg'
   },
   {
     id: 'upenn-kin',
@@ -151,7 +151,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Sep 2020',
     credentialId: 'f6294bde27d54a53b3965b17afeb8efb',
     link: 'https://courses.edx.org/certificates/f6294bde27d54a53b3965b17afeb8efb',
-    logo: '/src/assets/images/upenn.svg'
+    logo: '/images/upenn.svg'
   },
   {
     id: 'matlab',
@@ -159,7 +159,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: 'MathWorks',
     date: 'Sep 2019',
     link: 'https://drive.google.com/file/d/1J5_bYDIlgWTDM5RjKBj4fg6TCzX3uiKw/view',
-    logo: '/src/assets/images/matlab.png'
+    logo: '/images/matlab.png'
   },
   {
     id: 'hacking',
@@ -168,7 +168,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Mar 2019',
     credentialId: '3C1D4E1A-DC12-DEF7-A1CC-8E06666B302F',
     link: 'https://drive.google.com/file/d/1WuJsFfNkVhI4nE9JHhWkBS0ap7Ar1ZaS/view',
-    logo: '/src/assets/images/internshala.svg'
+    logo: '/images/internshala.svg'
   },
   {
     id: 'iot',
@@ -177,7 +177,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Mar 2019',
     credentialId: 'C6C39109-3EA0-97E1-F2C6-D826A1E674A4',
     link: 'https://drive.google.com/file/d/1UpWiwf0RvdqWCmvBDu5yNGP6KKEXi2wK/view',
-    logo: '/src/assets/images/internshala.svg'
+    logo: '/images/internshala.svg'
   },
   {
     id: 'cpp',
@@ -186,7 +186,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Jan 2018',
     credentialId: '#1051-3895775',
     link: 'https://www.sololearn.com/Certificate/CT-ALONUTNY/pdf',
-    logo: '/src/assets/images/cpp.svg'
+    logo: '/images/cpp.svg'
   },
   {
     id: 'scada',
@@ -194,7 +194,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: 'Siemens CoE, MSU Baroda',
     date: 'Jul 2017',
     link: 'https://drive.google.com/file/d/1BrvwN5CxzATWXsvTp8BI_1uNINpRHcIY/view',
-    logo: '/src/assets/images/siemens.svg'
+    logo: '/images/siemens.svg'
   },
   {
     id: 'low-voltage',
@@ -202,7 +202,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: 'Siemens CoE, MSU Baroda',
     date: 'Jun 2017',
     link: 'https://drive.google.com/file/d/1Kn-bAp0WX4ZLo8Y0S9PHOpVubFI_8yJy/view',
-    logo: '/src/assets/images/siemens.svg'
+    logo: '/images/siemens.svg'
   },
   {
     id: 'python-int',
@@ -211,7 +211,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Jun 2017',
     credentialId: '440684844595241cf2144f',
     link: 'https://drive.google.com/file/d/1A5ZEdzJXSRb3NmF-y2HfbE-FmKtyd-Ju/view',
-    logo: '/src/assets/images/internshala.svg'
+    logo: '/images/internshala.svg'
   },
   {
     id: 'simple-cv',
@@ -220,7 +220,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Mar 2017',
     credentialId: '88419223057a62a1d9ad2b',
     link: 'https://drive.google.com/file/d/1J8dWMfHGbalyn-FG_b_CXyMDL0AtU0XV/view',
-    logo: '/src/assets/images/internshala.svg'
+    logo: '/images/internshala.svg'
   },
   {
     id: 'vhdl',
@@ -229,7 +229,7 @@ export const CERTIFICATIONS: Certification[] = [
     date: 'Mar 2017',
     credentialId: '1910914545771610011a6e',
     link: 'https://drive.google.com/file/d/13SrT79tYRoIQDdeglqIbmOWquOm-CpNC/view',
-    logo: '/src/assets/images/internshala.svg'
+    logo: '/images/internshala.svg'
   },
   {
     id: 'plc',
@@ -237,7 +237,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: 'Siemens CoE, MSU Baroda',
     date: 'Jan 2016',
     link: 'https://drive.google.com/file/d/1ddQfEBPpeYZD2bD-zVD08yOar1e1hlAm/view',
-    logo: '/src/assets/images/siemens.svg'
+    logo: '/images/siemens.svg'
   },
   {
     id: 'process-inst',
@@ -245,7 +245,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: 'Siemens CoE, MSU Baroda',
     date: 'Jan 2016',
     link: 'https://drive.google.com/file/d/19saK7j9dZub9M4dBrQ9fzEjkzHhqI99x/view',
-    logo: '/src/assets/images/siemens.svg'
+    logo: '/images/siemens.svg'
   }
 ];
 

@@ -250,7 +250,7 @@ const AboutPage = () => (
       <div className="relative">
         <div className="aspect-[4/5] glass rounded-[4rem] overflow-hidden group border-white/10">
           <img
-            src="/src/assets/images/hero.png"
+            src="/images/hero.png"
             alt="Meet Doshi"
             className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000"
           />

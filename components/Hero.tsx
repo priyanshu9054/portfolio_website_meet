@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         >
           <div className="aspect-square rounded-[4rem] overflow-hidden border border-white/10 glass shadow-2xl shadow-blue-500/10">
             <img
-              src="/src/assets/images/hero.png"
+              src="/images/hero.png"
               alt="Meet Kumar Doshi"
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
             />
