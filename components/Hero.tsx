@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-48 pb-12 px-6 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[180px] rounded-full pointer-events-none" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
         {/* Sketch: Circle/Photo on left */}
         <motion.div
@@ -17,9 +17,9 @@ const Hero: React.FC = () => {
           className="relative group"
         >
           <div className="aspect-square rounded-[4rem] overflow-hidden border border-white/10 glass shadow-2xl shadow-blue-500/10">
-            <img 
-              src="https://media.licdn.com/dms/image/v2/D4D03AQGs6O9G3R8NGA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723708892795?e=1746057600&v=beta&t=57X8A67B7fK0778X-HhW3X-G6o-x0-m677W-X_4-h8" 
-              alt="Meet Kumar Doshi" 
+            <img
+              src="/src/assets/images/hero.png"
+              alt="Meet Kumar Doshi"
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
             />
           </div>

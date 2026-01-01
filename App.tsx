@@ -42,7 +42,7 @@ const HomePage = () => {
       <ProjectDeck onProjectSelect={setSelectedProject} />
       <KnowledgeGraph onProjectSelect={setSelectedProject} />
       <Certifications />
-      
+
       <section className="py-48 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-32">
           <Timeline title="Education" items={EDUCATION} />
@@ -52,9 +52,9 @@ const HomePage = () => {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)} 
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
           />
         )}
       </AnimatePresence>
@@ -77,7 +77,7 @@ const HomePage = () => {
 
 const BlogModal: React.FC<{ blog: BlogPost; onClose: () => void }> = ({ blog, onClose }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -125,17 +125,17 @@ const BlogPage = () => {
 
       <div className="space-y-8">
         {BLOGS.map(blog => (
-          <article 
-            key={blog.id} 
+          <article
+            key={blog.id}
             onClick={() => setSelectedBlog(blog)}
             className="glass p-12 rounded-[3.5rem] group cursor-pointer hover:bg-white/[0.04] transition-all"
           >
             <div className="flex items-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-white/40">
-               <Calendar className="w-4 h-4" /> {blog.date}
-               <span className="w-1 h-1 bg-white/10 rounded-full" />
-               <div className="flex gap-4">
+              <Calendar className="w-4 h-4" /> {blog.date}
+              <span className="w-1 h-1 bg-white/10 rounded-full" />
+              <div className="flex gap-4">
                 {blog.tags.map(t => <span key={t} className="text-blue-500">{t}</span>)}
-               </div>
+              </div>
             </div>
             <h2 className="text-4xl font-bold mb-6 tracking-tighter group-hover:translate-x-4 transition-transform duration-500">{blog.title}</h2>
             <p className="text-gray-400 text-xl font-light leading-relaxed mb-10">{blog.excerpt}</p>
@@ -157,8 +157,8 @@ const ProjectsPage = () => {
   const [query, setQuery] = React.useState('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filtered = PROJECTS.filter(p => 
-    p.title.toLowerCase().includes(query.toLowerCase()) || 
+  const filtered = PROJECTS.filter(p =>
+    p.title.toLowerCase().includes(query.toLowerCase()) ||
     p.tags.some(t => t.toLowerCase().includes(query.toLowerCase()))
   );
 
@@ -171,8 +171,8 @@ const ProjectsPage = () => {
         </div>
         <div className="relative w-full md:w-[450px]">
           <Search className="absolute left-8 top-1/2 -translate-y-1/2 text-white/20 w-6 h-6" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Search index..."
             className="w-full bg-white/5 border border-white/10 rounded-full py-6 pl-20 pr-10 focus:outline-none focus:border-white/40 transition-all text-white font-light text-lg"
             onChange={(e) => setQuery(e.target.value)}
@@ -182,8 +182,8 @@ const ProjectsPage = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {filtered.map(project => (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
             onClick={() => setSelectedProject(project)}
             className="glass rounded-[3rem] p-4 flex flex-col group overflow-hidden hover:border-white/20 transition-all cursor-pointer"
           >
@@ -207,9 +207,9 @@ const ProjectsPage = () => {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)} 
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
           />
         )}
       </AnimatePresence>
@@ -233,26 +233,26 @@ const AboutPage = () => (
             My foundation bridges AI algorithms with hardware-aware, production-grade systems—a critical capability for edge AI and safety-critical applications.
           </p>
           <div className="pt-8">
-             <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Experience Highlights</h4>
-             <ul className="space-y-4">
-                <li className="flex gap-4">
-                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2" />
-                  <p className="text-sm">FPGA Acceleration: Re-architected software-defined radio pipelines using custom floating-point formats.</p>
-                </li>
-                <li className="flex gap-4">
-                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2" />
-                  <p className="text-sm">Safety-Critical Control: Designed industrial laser systems with &lt;2 μs emergency response.</p>
-                </li>
-             </ul>
+            <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Experience Highlights</h4>
+            <ul className="space-y-4">
+              <li className="flex gap-4">
+                <div className="w-1 h-1 bg-blue-500 rounded-full mt-2" />
+                <p className="text-sm">FPGA Acceleration: Re-architected software-defined radio pipelines using custom floating-point formats.</p>
+              </li>
+              <li className="flex gap-4">
+                <div className="w-1 h-1 bg-blue-500 rounded-full mt-2" />
+                <p className="text-sm">Safety-Critical Control: Designed industrial laser systems with &lt;2 μs emergency response.</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
       <div className="relative">
         <div className="aspect-[4/5] glass rounded-[4rem] overflow-hidden group border-white/10">
-          <img 
-            src="https://media.licdn.com/dms/image/v2/D4D03AQGs6O9G3R8NGA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723708892795?e=1746057600&v=beta&t=57X8A67B7fK0778X-HhW3X-G6o-x0-m677W-X_4-h8" 
-            alt="Meet Doshi" 
-            className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000" 
+          <img
+            src="/src/assets/images/hero.png"
+            alt="Meet Doshi"
+            className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000"
           />
         </div>
         <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
