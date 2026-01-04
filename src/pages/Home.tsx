@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import SkillMarquee from '../components/Skills/SkillMarquee';
-import ProjectDeck, { ProjectModal } from '../components/Projects/ProjectDeck';
+import HomeProjectDeck from '../components/Projects/HomeProjectDeck';
+import { ProjectModal } from '../components/Projects/ProjectModal';
 import KnowledgeGraph from '../components/Skills/KnowledgeGraph';
 import Certifications from '../components/Timeline/Certifications';
 import Timeline from '../components/Timeline/Timeline';
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
         <main>
             <Hero />
             <SkillMarquee />
-            <ProjectDeck onProjectSelect={setSelectedProject} />
+            <HomeProjectDeck onProjectSelect={setSelectedProject} />
             <KnowledgeGraph onProjectSelect={setSelectedProject} />
             <Certifications />
 

@@ -1,6 +1,7 @@
 [
     {
         "id": "jerboa",
+        "showOnHome": true,
         "title": "Jerboa Running Controller",
         "description": "Tailed monopod robot controller combining Inertial Reorientation and SLIP.",
         "longDescription": "Derived and simulated dynamics for a Simplified Helicopter and a falling cat model. Integrated SLIP models for the Jerboa monopod. Implemented Stance, Flight, and Raibert stepping controllers to achieve stable hopping.",
@@ -11,10 +12,13 @@
             "UPenn"
         ],
         "image": "/images/project1.png",
+        "engagement": "12 min",
+        "satisfaction": "4.5*",
         "github": "https://github.com/meetkumar-doshi"
     },
     {
         "id": "slip-anchoring",
+        "showOnHome": true,
         "title": "Anchoring SLIP in Mechanisms",
         "description": "Hybrid systems modeling for Spring Loaded Inverted Pendulums (SLIP).",
         "longDescription": "Derived dynamics for Lossless and Energy-loss SLIP. Extended the model to a realistic 5-bar-linkage design, deriving full dynamics and building custom controllers for multi-jointed locomotion.",
@@ -24,10 +28,13 @@
             "UPenn"
         ],
         "image": "/images/project2.jpg",
+        "engagement": "10 min",
+        "satisfaction": "4.8*",
         "github": "https://github.com/meetkumar-doshi"
     },
     {
         "id": "hopper",
+        "showOnHome": true,
         "title": "Vertical Stable Hopper",
         "description": "Active hopper simulation with linear, air, and virtual electromagnetic springs.",
         "longDescription": "Started with Mass-Spring-Damper mechanics for a bouncing ball with thrust injection. Transitioned to an active pogo-stick hopper with 5-bar-linkage leg kinematics.",
@@ -37,6 +44,8 @@
             "UPenn"
         ],
         "image": "/images/project3.jpg",
+        "engagement": "150%",
+        "satisfaction": "4.5*",
         "github": "https://github.com/meetkumar-doshi"
     },
     {

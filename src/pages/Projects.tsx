@@ -1,10 +1,9 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, Github } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import projectsData from '../../content/data/projects.json';
 import { Project } from '../types';
-import { ProjectModal } from '../components/Projects/ProjectDeck';
+import { ProjectModal } from '../components/Projects/ProjectModal';
 
 const ProjectsPage = () => {
     const [query, setQuery] = useState('');
@@ -17,12 +16,12 @@ const ProjectsPage = () => {
 
     return (
         <div className="pt-64 px-6 max-w-7xl mx-auto pb-48">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-32 gap-12">
+            <div className="flex flex-col items-center text-center mb-32">
                 <div className="space-y-6">
-                    <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">Full Archive</span>
-                    <h1 className="text-7xl md:text-[8rem] font-bold tracking-tighter leading-none">PROJECTS</h1>
+                    <span className="text-white/40 font-bold uppercase tracking-[0.8em] text-[10px]">Work Archives</span>
+                    <h1 className="text-7xl md:text-[9rem] font-bold tracking-tighter leading-none">PROJECTS</h1>
                 </div>
-                <div className="relative w-full md:w-[450px]">
+                <div className="relative w-full md:w-[450px] mt-16">
                     <Search className="absolute left-8 top-1/2 -translate-y-1/2 text-white/20 w-6 h-6" />
                     <input
                         type="text"

@@ -1,8 +1,6 @@
-
-import React from 'react';
 import { Linkedin, Github } from 'lucide-react';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <footer className="py-24 px-6 border-t border-white/5 bg-[#050505]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
