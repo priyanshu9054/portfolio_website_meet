@@ -5,16 +5,7 @@ import techStack from '../../../content/data/tech-stack.json';
 
 const SkillMarquee: React.FC = () => {
   return (
-    <div className="py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden border-y border-white/5">
-      {/* Section Header */}
-      <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent mb-3">
-          Tech Stack & Tools
-        </h2>
-        <p className="text-white/40 text-sm md:text-base max-w-md mx-auto">
-          Technologies I work with to bring ideas to life
-        </p>
-      </div>
+    <div className="py-10 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden border-y border-white/5">
 
       {/* Marquee Container */}
       <div className="relative flex whitespace-nowrap group">
