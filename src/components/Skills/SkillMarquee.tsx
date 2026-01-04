@@ -1,49 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const logos = [
-  {
-    name: 'Python',
-    color: '#3776AB',
-    image: '/logos/python.svg'
-  },
-  {
-    name: 'PyTorch',
-    color: '#EE4C2C',
-    image: '/logos/pytorch.svg'
-  },
-  {
-    name: 'TensorFlow',
-    color: '#FF6F00',
-    image: '/logos/tensorflow.svg'
-  },
-  {
-    name: 'OpenAI',
-    color: '#10A37F',
-    image: '/logos/openai.svg'
-  },
-  {
-    name: 'HuggingFace',
-    color: '#FFD21E',
-    image: '/logos/huggingface.svg'
-  },
-  {
-    name: 'Docker',
-    color: '#2496ED',
-    image: '/logos/docker.svg'
-  },
-  {
-    name: 'AWS',
-    color: '#FF9900',
-    image: '/logos/aws.svg'
-  },
-  {
-    name: 'SQL',
-    color: '#336791',
-    image: '/logos/sql.svg'
-  }
-];
+import techStack from '../../../content/data/tech-stack.json';
 
 const SkillMarquee: React.FC = () => {
   return (
@@ -74,7 +32,7 @@ const SkillMarquee: React.FC = () => {
           }}
           className="flex items-center gap-8 md:gap-12 pr-8 md:pr-12"
         >
-          {logos.concat(logos).concat(logos).map((logo, idx) => (
+          {techStack.concat(techStack).concat(techStack).map((logo, idx) => (
             <div
               key={idx}
               className="relative flex-shrink-0 group/logo cursor-default"

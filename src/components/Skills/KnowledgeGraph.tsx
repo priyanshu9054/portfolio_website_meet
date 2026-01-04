@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { KNOWLEDGE_CARDS, PROJECTS } from '../constants';
-import { Project } from '../types';
+import knowledgeCards from '../../../content/data/knowledge.json';
+import projects from '../../../content/data/projects.json';
+import { Project } from '../../types';
 import { Plus, Minus, Cpu, ChevronRight } from 'lucide-react';
 
 interface KnowledgeGraphProps {
@@ -14,7 +15,7 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
 
   const handleProjectClick = (e: React.MouseEvent, projectTitle: string) => {
     e.stopPropagation();
-    const project = PROJECTS.find(p => p.title === projectTitle);
+    const project = projects.find((p: Project) => p.title === projectTitle);
     if (project) {
       onProjectSelect(project);
     }
@@ -29,9 +30,9 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {KNOWLEDGE_CARDS.map((card) => {
+          {knowledgeCards.map((card) => {
             const isExpanded = expandedId === card.id;
-            
+
             return (
               <motion.div
                 key={card.id}
@@ -77,8 +78,8 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                             <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Applied Projects</h4>
                             <div className="space-y-4">
                               {card.projects.map(proj => (
-                                <button 
-                                  key={proj} 
+                                <button
+                                  key={proj}
                                   onClick={(e) => handleProjectClick(e, proj)}
                                   className="flex items-center text-white/60 hover:text-white transition-colors group/link text-left w-full"
                                 >

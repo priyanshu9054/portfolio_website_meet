@@ -1,0 +1,17 @@
+{
+    "title": "MEET",
+    "subtitle": "DOSHI",
+    "role": "Applied AI Engineer & Robotics Architect",
+    "description": "Engineering the intersection of Neural Foundations and autonomous robotics systems. MSCS AI from Georgia Tech.",
+    "links": {
+        "primary": {
+            "text": "Projects",
+            "url": "#projects"
+        },
+        "secondary": {
+            "text": "LinkedIn",
+            "url": "https://www.linkedin.com/in/meetkumar-doshi"
+        }
+    },
+    "heroImage": "/images/hero.png"
+}

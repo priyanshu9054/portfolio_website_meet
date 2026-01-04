@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TimelineItem as ITimelineItem } from '../types';
+import { TimelineItem as ITimelineItem } from '../../types';
 
 const TimelineItem: React.FC<{ item: ITimelineItem; index: number }> = ({ item, index }) => {
   return (
     <div className="relative pl-12 pb-16 last:pb-0 group">
       {/* Sketch-accurate Vertical Line */}
       <div className="absolute left-[6px] top-[14px] bottom-0 w-[1px] bg-white/10 group-last:bg-transparent" />
-      
+
       {/* Node Circle */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}

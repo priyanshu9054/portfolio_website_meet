@@ -1,0 +1,16 @@
+{
+    "title": "ABOUT",
+    "subtitle": "The Engineer",
+    "bio": [
+        "I am an Applied AI Engineer with a strong focus on Artificial Intelligence for Robotics and Autonomous Systems, combining academic training from Georgia Tech and UPenn.",
+        "My foundation bridges AI algorithms with hardware-aware, production-grade systems—a critical capability for edge AI and safety-critical applications."
+    ],
+    "highlights": {
+        "title": "Experience Highlights",
+        "items": [
+            "FPGA Acceleration: Re-architected software-defined radio pipelines using custom floating-point formats.",
+            "Safety-Critical Control: Designed industrial laser systems with <2 μs emergency response."
+        ]
+    },
+    "image": "/images/hero.png"
+}

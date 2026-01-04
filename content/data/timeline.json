@@ -1,0 +1,41 @@
+{
+    "education": [
+        {
+            "id": "gt",
+            "institution": "Georgia Institute of Technology",
+            "role": "M.S. in Computer Science (AI Track)",
+            "duration": "2022 — 2025",
+            "description": "Deep specialization in ML, DL, and Reinforcement Learning. Grade: A."
+        },
+        {
+            "id": "upenn",
+            "institution": "University of Pennsylvania",
+            "role": "MicroMasters in Robotics",
+            "duration": "2020 — 2020",
+            "description": "Intensive series covering Kinematics, Dynamics, Control, and Vision-based Navigation."
+        },
+        {
+            "id": "msu",
+            "institution": "MSU Baroda",
+            "role": "B.E. in Electronics (Instrumentation)",
+            "duration": "2013 — 2017",
+            "description": "Focused on Embedded Systems and Signal Processing. Graduated with Distinction."
+        }
+    ],
+    "experience": [
+        {
+            "id": "aatman",
+            "institution": "Aatman Electro Magnetics",
+            "role": "Design & Development Engineer",
+            "duration": "2018 — 2022",
+            "description": "Architected FPGA pipelines for floating-point acceleration. Led development of dual-core embedded platforms for industrial safety-critical control."
+        },
+        {
+            "id": "lt",
+            "institution": "L&T Technology Services",
+            "role": "Associate Engineer",
+            "duration": "2018 — 2018",
+            "description": "Embedded software programming and platform coordination for industrial instrumentation."
+        }
+    ]
+}

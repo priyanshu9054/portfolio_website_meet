@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CERTIFICATIONS } from '../constants';
+import certifications from '../../../content/data/certifications.json';
+import { Certification } from '../../types';
 import { ExternalLink, Award } from 'lucide-react';
 
-const CertificationCard: React.FC<{ cert: typeof CERTIFICATIONS[0]; index: number }> = ({ cert, index }) => {
+const CertificationCard: React.FC<{ cert: Certification; index: number }> = ({ cert, index }) => {
   return (
     <motion.a
       href={cert.link}
@@ -22,10 +23,10 @@ const CertificationCard: React.FC<{ cert: typeof CERTIFICATIONS[0]; index: numbe
 
       <div className="flex items-start gap-6 mb-8">
         <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/5 p-3 flex items-center justify-center group-hover:bg-white transition-all duration-500">
-          <img 
-            src={cert.logo} 
-            alt={cert.issuer} 
-            className="w-full h-full object-contain filter group-hover:invert-0 transition-all duration-500 grayscale group-hover:grayscale-0" 
+          <img
+            src={cert.logo}
+            alt={cert.issuer}
+            className="w-full h-full object-contain filter group-hover:invert-0 transition-all duration-500 grayscale group-hover:grayscale-0"
           />
         </div>
         <div className="flex-1">
@@ -48,7 +49,7 @@ const CertificationCard: React.FC<{ cert: typeof CERTIFICATIONS[0]; index: numbe
           </div>
         )}
       </div>
-      
+
       <div className="mt-6 flex items-center text-[10px] font-bold uppercase tracking-[0.3em] text-blue-500 opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-2 group-hover:translate-y-0">
         Show Credential <ExternalLink className="w-3 h-3 ml-2" />
       </div>
@@ -68,7 +69,7 @@ const Certifications: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CERTIFICATIONS.map((cert, idx) => (
+          {certifications.map((cert: Certification, idx: number) => (
             <CertificationCard key={cert.id} cert={cert} index={idx} />
           ))}
         </div>

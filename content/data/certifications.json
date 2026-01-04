@@ -1,0 +1,141 @@
+[
+    {
+        "id": "upenn-mm",
+        "title": "MicroMasters in Robotics",
+        "issuer": "University of Pennsylvania",
+        "date": "Nov 2020",
+        "credentialId": "b35b1b71286846b89a51f757a4e90c26",
+        "link": "https://credentials.edx.org/credentials/b35b1b71286846b89a51f757a4e90c26/",
+        "logo": "/images/upenn.svg"
+    },
+    {
+        "id": "upenn-loco",
+        "title": "Robotics: Locomotion Engineering",
+        "issuer": "University of Pennsylvania",
+        "date": "Nov 2020",
+        "credentialId": "c787b5f2db7f4609a3916de4e8f377f9",
+        "link": "https://courses.edx.org/certificates/c787b5f2db7f4609a3916de4e8f377f9",
+        "logo": "/images/upenn.svg"
+    },
+    {
+        "id": "upenn-vision",
+        "title": "Robotics: Vision Intelligence & ML",
+        "issuer": "University of Pennsylvania",
+        "date": "Nov 2020",
+        "credentialId": "8210341c38354609aa52da60fd61b4e5",
+        "link": "https://courses.edx.org/certificates/8210341c38354609aa52da60fd61b4e5",
+        "logo": "/images/upenn.svg"
+    },
+    {
+        "id": "upenn-control",
+        "title": "Robotics: Dynamics and Control",
+        "issuer": "University of Pennsylvania",
+        "date": "Oct 2020",
+        "credentialId": "44eb1890e7c447bab23d084fce3ce9c7",
+        "link": "https://courses.edx.org/certificates/44eb1890e7c447bab23d084fce3ce9c7",
+        "logo": "/images/upenn.svg"
+    },
+    {
+        "id": "upenn-kin",
+        "title": "Robotics: Kinematics Foundations",
+        "issuer": "University of Pennsylvania",
+        "date": "Sep 2020",
+        "credentialId": "f6294bde27d54a53b3965b17afeb8efb",
+        "link": "https://courses.edx.org/certificates/f6294bde27d54a53b3965b17afeb8efb",
+        "logo": "/images/upenn.svg"
+    },
+    {
+        "id": "matlab",
+        "title": "MATLAB Onramp",
+        "issuer": "MathWorks",
+        "date": "Sep 2019",
+        "link": "https://drive.google.com/file/d/1J5_bYDIlgWTDM5RjKBj4fg6TCzX3uiKw/view",
+        "logo": "/images/matlab.png"
+    },
+    {
+        "id": "hacking",
+        "title": "Ethical Hacking (Basics)",
+        "issuer": "Internshala",
+        "date": "Mar 2019",
+        "credentialId": "3C1D4E1A-DC12-DEF7-A1CC-8E06666B302F",
+        "link": "https://drive.google.com/file/d/1WuJsFfNkVhI4nE9JHhWkBS0ap7Ar1ZaS/view",
+        "logo": "/images/internshala.svg"
+    },
+    {
+        "id": "iot",
+        "title": "Internet of Things",
+        "issuer": "Internshala",
+        "date": "Mar 2019",
+        "credentialId": "C6C39109-3EA0-97E1-F2C6-D826A1E674A4",
+        "link": "https://drive.google.com/file/d/1UpWiwf0RvdqWCmvBDu5yNGP6KKEXi2wK/view",
+        "logo": "/images/internshala.svg"
+    },
+    {
+        "id": "cpp",
+        "title": "C++ Course",
+        "issuer": "Sololearn",
+        "date": "Jan 2018",
+        "credentialId": "#1051-3895775",
+        "link": "https://www.sololearn.com/Certificate/CT-ALONUTNY/pdf",
+        "logo": "/images/cpp.svg"
+    },
+    {
+        "id": "scada",
+        "title": "Basics of SCADA",
+        "issuer": "Siemens CoE, MSU Baroda",
+        "date": "Jul 2017",
+        "link": "https://drive.google.com/file/d/1BrvwN5CxzATWXsvTp8BI_1uNINpRHcIY/view",
+        "logo": "/images/siemens.svg"
+    },
+    {
+        "id": "low-voltage",
+        "title": "Low Voltage Switch Gears",
+        "issuer": "Siemens CoE, MSU Baroda",
+        "date": "Jun 2017",
+        "link": "https://drive.google.com/file/d/1Kn-bAp0WX4ZLo8Y0S9PHOpVubFI_8yJy/view",
+        "logo": "/images/siemens.svg"
+    },
+    {
+        "id": "python-int",
+        "title": "Programming with Python",
+        "issuer": "Internshala",
+        "date": "Jun 2017",
+        "credentialId": "440684844595241cf2144f",
+        "link": "https://drive.google.com/file/d/1A5ZEdzJXSRb3NmF-y2HfbE-FmKtyd-Ju/view",
+        "logo": "/images/internshala.svg"
+    },
+    {
+        "id": "simple-cv",
+        "title": "Image Processing - SimpleCV",
+        "issuer": "Internshala",
+        "date": "Mar 2017",
+        "credentialId": "88419223057a62a1d9ad2b",
+        "link": "https://drive.google.com/file/d/1J8dWMfHGbalyn-FG_b_CXyMDL0AtU0XV/view",
+        "logo": "/images/internshala.svg"
+    },
+    {
+        "id": "vhdl",
+        "title": "VLSI using VHDL",
+        "issuer": "Internshala",
+        "date": "Mar 2017",
+        "credentialId": "1910914545771610011a6e",
+        "link": "https://drive.google.com/file/d/13SrT79tYRoIQDdeglqIbmOWquOm-CpNC/view",
+        "logo": "/images/internshala.svg"
+    },
+    {
+        "id": "plc",
+        "title": "Basics of PLC",
+        "issuer": "Siemens CoE, MSU Baroda",
+        "date": "Jan 2016",
+        "link": "https://drive.google.com/file/d/1ddQfEBPpeYZD2bD-zVD08yOar1e1hlAm/view",
+        "logo": "/images/siemens.svg"
+    },
+    {
+        "id": "process-inst",
+        "title": "Process Instrumentation",
+        "issuer": "Siemens CoE, MSU Baroda",
+        "date": "Jan 2016",
+        "link": "https://drive.google.com/file/d/19saK7j9dZub9M4dBrQ9fzEjkzHhqI99x/view",
+        "logo": "/images/siemens.svg"
+    }
+]

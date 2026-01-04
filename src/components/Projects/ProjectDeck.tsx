@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PROJECTS } from '../constants';
-import { Project } from '../types';
+import projects from '../../../content/data/projects.json';
+import { Project } from '../../types';
 import { X, Github, ArrowUpRight } from 'lucide-react';
 
 export const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -21,18 +21,18 @@ export const ProjectModal: React.FC<{ project: Project; onClose: () => void }> =
         onClick={(e) => e.stopPropagation()}
         className="glass w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-[3rem] md:rounded-[4rem] relative shadow-2xl flex flex-col md:flex-row"
       >
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           className="absolute top-6 right-6 md:top-10 md:right-10 z-[1001] p-4 bg-white/10 hover:bg-white/20 rounded-full border border-white/10 text-white transition-all backdrop-blur-xl"
         >
           <X className="w-6 h-6" />
         </button>
 
         <div className="md:w-1/2 bg-black flex items-center justify-center p-6 md:p-12">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full aspect-video md:aspect-square object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl" 
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full aspect-video md:aspect-square object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl"
           />
         </div>
 
@@ -56,17 +56,17 @@ export const ProjectModal: React.FC<{ project: Project; onClose: () => void }> =
 
           <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-white/5">
             {project.github && (
-              <a 
-                href={project.github} 
-                target="_blank" 
+              <a
+                href={project.github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-5 bg-white text-black rounded-full font-bold uppercase text-[10px] tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-gray-200 transition-all group"
               >
-                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" /> 
+                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 GitHub Code Link
               </a>
             )}
-            <button 
+            <button
               onClick={onClose}
               className="px-8 py-5 border border-white/10 text-white rounded-full font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white/5 transition-all"
             >
@@ -88,9 +88,9 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ proj
       onClick={onClick}
     >
       <div className="relative aspect-[16/10] rounded-[2.2rem] overflow-hidden mb-8">
-        <img 
-          src={project.image} 
-          alt={project.title} 
+        <img
+          src={project.image}
+          alt={project.title}
           className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 brightness-75 grayscale group-hover:grayscale-0 group-hover:brightness-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity" />
@@ -124,7 +124,7 @@ const ProjectDeck: React.FC<ProjectDeckProps> = ({ onProjectSelect }) => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-12">
-        {PROJECTS.map((project) => (
+        {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} onClick={() => onProjectSelect(project)} />
         ))}
       </div>

@@ -1,0 +1,94 @@
+[
+    {
+        "id": "jerboa",
+        "title": "Jerboa Running Controller",
+        "description": "Tailed monopod robot controller combining Inertial Reorientation and SLIP.",
+        "longDescription": "Derived and simulated dynamics for a Simplified Helicopter and a falling cat model. Integrated SLIP models for the Jerboa monopod. Implemented Stance, Flight, and Raibert stepping controllers to achieve stable hopping.",
+        "tags": [
+            "Robotics",
+            "Control",
+            "Dynamics",
+            "UPenn"
+        ],
+        "image": "/images/project1.png",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "slip-anchoring",
+        "title": "Anchoring SLIP in Mechanisms",
+        "description": "Hybrid systems modeling for Spring Loaded Inverted Pendulums (SLIP).",
+        "longDescription": "Derived dynamics for Lossless and Energy-loss SLIP. Extended the model to a realistic 5-bar-linkage design, deriving full dynamics and building custom controllers for multi-jointed locomotion.",
+        "tags": [
+            "Hybrid Systems",
+            "Kinematics",
+            "UPenn"
+        ],
+        "image": "/images/project2.jpg",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "hopper",
+        "title": "Vertical Stable Hopper",
+        "description": "Active hopper simulation with linear, air, and virtual electromagnetic springs.",
+        "longDescription": "Started with Mass-Spring-Damper mechanics for a bouncing ball with thrust injection. Transitioned to an active pogo-stick hopper with 5-bar-linkage leg kinematics.",
+        "tags": [
+            "Actuation",
+            "Stability",
+            "UPenn"
+        ],
+        "image": "/images/project3.jpg",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "brachiating",
+        "title": "Brachiating Robot Controller",
+        "description": "Energy-based control for double-pendulum arm-swinging behavior.",
+        "longDescription": "Analyzed LTI systems, energy basins, and stable fixed points. Wrote a systematic controller for double pendulum swinging behavior based on system parameters and joint velocities.",
+        "tags": [
+            "LTI Systems",
+            "Dynamics",
+            "UPenn"
+        ],
+        "image": "/images/project4.jpg",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "sawyer",
+        "title": "Sawyer 7-DOF Modeling",
+        "description": "Full rigid body dynamics modeling for the Rethink Robotics Sawyer manipulator.",
+        "longDescription": "Computed homogeneous transformations, Jacobians, and full Lagrangian equations of motion. Calculated Inertial Matrix and total Kinetic Energy for the 7-degree-of-freedom arm.",
+        "tags": [
+            "Kinematics",
+            "Jacobians",
+            "UPenn"
+        ],
+        "image": "/images/project5.png",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "optical-flow",
+        "title": "Multiscale Optical Flow",
+        "description": "Pyramidal feature detection and image warping based on optical flow estimation.",
+        "longDescription": "Implemented a multiscale optical flow estimation function to warp images. Used pyramidal approaches for robust feature detection across varying image scales.",
+        "tags": [
+            "Computer Vision",
+            "Perception",
+            "UPenn"
+        ],
+        "image": "/images/project6.jpg",
+        "github": "https://github.com/meetkumar-doshi"
+    },
+    {
+        "id": "gyrotor",
+        "title": "GYROTOR Targeting Robot",
+        "description": "Motion controlled, IR targeting robot based on sensor fusion of IMU data.",
+        "longDescription": "Final year project involving Accelerometer and Gyroscope sensor fusion. Built a custom motion-controlled platform capable of precise IR targeting and autonomous navigation.",
+        "tags": [
+            "Embedded Systems",
+            "Sensor Fusion",
+            "Robotics"
+        ],
+        "image": "/images/project7.jpg",
+        "github": "https://github.com/meetkumar-doshi"
+    }
+]
