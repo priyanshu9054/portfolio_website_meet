@@ -1,113 +1,95 @@
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import projects from '../../../content/data/projects.json';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import projectsData from '../../../content/data/projects.json';
 import { Project } from '../../types';
-import { X, Github, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
+import ProjectModal from './ProjectModal';
 
-export const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
+export { ProjectModal };
+
+const StickyProjectCard: React.FC<{
+  project: Project;
+  i: number;
+  progress: any;
+  total: number;
+  onProjectSelect: (p: Project) => void;
+}> = ({ project, i, progress, total, onProjectSelect }) => {
+  // Scale down as more cards cover it
+  const targetScale = 1 - ((total - i) * 0.04);
+  const start = i / total;
+  const scale = useTransform(progress, [start, 1], [1, targetScale]);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-6 bg-black/95 backdrop-blur-xl"
-      onClick={onClose}
-    >
+    <div className="sticky top-0 h-screen flex items-center justify-center px-6">
       <motion.div
-        initial={{ y: 50, scale: 0.95, opacity: 0 }}
-        animate={{ y: 0, scale: 1, opacity: 1 }}
-        exit={{ y: 50, scale: 0.95, opacity: 0 }}
-        onClick={(e) => e.stopPropagation()}
-        className="glass w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-[3rem] md:rounded-[4rem] relative shadow-2xl flex flex-col md:flex-row"
+        style={{
+          scale,
+          top: `calc(10% + ${i * 25}px)`,
+          zIndex: i + 1,
+        }}
+        onClick={() => onProjectSelect(project)}
+        className="relative w-full max-w-6xl h-[75vh] min-h-[500px] bg-[#141414] rounded-[32px] border border-[#cccccc1a] overflow-hidden shadow-2xl origin-top flex flex-col md:flex-row cursor-pointer transition-colors group"
       >
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 md:top-10 md:right-10 z-[1001] p-4 bg-white/10 hover:bg-white/20 rounded-full border border-white/10 text-white transition-all backdrop-blur-xl"
-        >
-          <X className="w-6 h-6" />
-        </button>
-
-        <div className="md:w-1/2 bg-black flex items-center justify-center p-6 md:p-12">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full aspect-video md:aspect-square object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl"
-          />
-        </div>
-
-        <div className="md:w-1/2 p-8 md:p-20 flex flex-col justify-center bg-white/[0.02]">
-          <div className="mb-8">
-            <span className="text-blue-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">Project Brief</span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter leading-none">{project.title}</h2>
-            <div className="flex flex-wrap gap-3 mb-8">
+        {/* Left Content */}
+        <div className="flex-1 p-8 md:p-14 flex flex-col justify-between">
+          <div className="space-y-8 text-left">
+            <div className="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-white/40">{tag}</span>
+                <span key={tag} className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30">{tag}</span>
               ))}
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-none">
+                {project.title}
+              </h3>
+              <p className="text-white/40 text-lg md:text-xl leading-relaxed max-w-md font-light line-clamp-3">
+                {project.description}
+              </p>
             </div>
           </div>
 
-          <div className="space-y-6 mb-12">
-            <h4 className="text-[10px] font-bold text-white uppercase tracking-[0.3em] opacity-30">The Architecture</h4>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
-              {project.longDescription || project.description}
-            </p>
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <div className="flex items-center justify-center px-10 py-5 bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-500">
+              View case study
+            </div>
+
+            {project.github && (
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white transition-colors">
+                <Github className="w-5 h-5 opacity-50" />
+                Code Link
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right Column (Image + Metrics) */}
+        <div className="md:w-[55%] h-full p-4 md:p-6 bg-black/20 flex flex-col gap-4">
+          <div className="flex-1 rounded-[24px] overflow-hidden relative">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+            <div className="absolute top-8 right-8 p-4 bg-white/10 backdrop-blur-xl rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+              <ArrowUpRight className="w-6 h-6 text-white" />
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-white/5">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-5 bg-white text-black rounded-full font-bold uppercase text-[10px] tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-gray-200 transition-all group"
-              >
-                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                GitHub Code Link
-              </a>
-            )}
-            <button
-              onClick={onClose}
-              className="px-8 py-5 border border-white/10 text-white rounded-full font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white/5 transition-all"
-            >
-              Close
-            </button>
+          <div className="h-32 flex gap-4">
+            <div className="flex-1 glass rounded-[24px] p-6 flex flex-col justify-center text-left">
+              <span className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Reach</span>
+              <span className="text-white text-2xl md:text-3xl font-bold tracking-tighter">{(project as any).engagement || '0'}</span>
+            </div>
+            <div className="flex-1 glass rounded-[24px] p-6 flex flex-col justify-center text-left">
+              <span className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Rating</span>
+              <span className="text-white text-2xl md:text-3xl font-bold tracking-tighter">{(project as any).satisfaction || '0'}</span>
+            </div>
           </div>
         </div>
       </motion.div>
-    </motion.div>
-  );
-};
-
-const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => {
-  return (
-    <motion.div
-      id={`project-${project.id}`}
-      whileHover={{ y: -12 }}
-      className="glass rounded-[3rem] p-4 flex flex-col h-full cursor-pointer group transition-all duration-700 hover:border-white/20 border border-transparent"
-      onClick={onClick}
-    >
-      <div className="relative aspect-[16/10] rounded-[2.2rem] overflow-hidden mb-8">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 brightness-75 grayscale group-hover:grayscale-0 group-hover:brightness-100"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity" />
-        <div className="absolute top-6 right-6 p-4 bg-white/10 backdrop-blur-xl rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-          <ArrowUpRight className="w-5 h-5 text-white" />
-        </div>
-      </div>
-      <div className="px-6 pb-8 space-y-4 flex-1">
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map(tag => (
-            <span key={tag} className="text-[9px] uppercase font-bold tracking-widest text-white/20 group-hover:text-white/40 transition-colors">{tag}</span>
-          ))}
-        </div>
-        <h3 className="text-3xl font-bold tracking-tighter group-hover:text-blue-400 transition-colors duration-500">{project.title}</h3>
-        <p className="text-gray-400 leading-relaxed line-clamp-2 text-base font-light group-hover:text-gray-300 transition-colors">{project.description}</p>
-      </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -116,16 +98,35 @@ interface ProjectDeckProps {
 }
 
 const ProjectDeck: React.FC<ProjectDeckProps> = ({ onProjectSelect }) => {
+  const container = useRef(null);
+  const homeProjects = (projectsData as any[]).filter(p => p.showOnHome);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"]
+  });
+
   return (
-    <section id="projects" className="py-48 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-24 space-y-6">
-        <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">Work Archives</span>
-        <h2 className="text-6xl md:text-9xl font-bold tracking-tighter leading-none">PROJECTS</h2>
+    <section
+      ref={container}
+      id="projects"
+      className="relative bg-[#050505]"
+      style={{ height: `${homeProjects.length * 100}vh` }}
+    >
+      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center pointer-events-none z-0">
+        <h2 className="text-[15vw] font-black tracking-tighter text-white/5 select-none leading-none uppercase">PROJECTS</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        {projects.map((project: Project) => (
-          <ProjectCard key={project.id} project={project} onClick={() => onProjectSelect(project)} />
+      <div className="relative z-10 w-full">
+        {homeProjects.map((project, i) => (
+          <StickyProjectCard
+            key={project.id}
+            project={project}
+            i={i}
+            progress={scrollYProgress}
+            total={homeProjects.length}
+            onProjectSelect={onProjectSelect}
+          />
         ))}
       </div>
     </section>

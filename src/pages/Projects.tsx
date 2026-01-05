@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Search, Github } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
-import projectsData from '../../content/data/projects.json';
+import projectsData from "../../content/data/projects.json";
 import { Project } from '../types';
-import { ProjectModal } from '../components/Projects/ProjectDeck';
+import ProjectModal from '../components/Projects/ProjectModal';
 
 const ProjectsPage = () => {
     const [query, setQuery] = useState('');

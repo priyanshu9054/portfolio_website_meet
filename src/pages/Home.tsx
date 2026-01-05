@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import SkillMarquee from '../components/Skills/SkillMarquee';
-import ProjectDeck, { ProjectModal } from '../components/Projects/ProjectDeck';
+import ProjectDeck from '../components/Projects/ProjectDeck';
+import ProjectModal from '../components/Projects/ProjectModal';
 import KnowledgeGraph from '../components/Skills/KnowledgeGraph';
 import Certifications from '../components/Timeline/Certifications';
 import Timeline from '../components/Timeline/Timeline';
