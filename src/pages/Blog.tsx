@@ -10,7 +10,7 @@ const BlogPage = () => {
     const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
 
     // Load all markdown files from content/posts
-    const modules = import.meta.glob('../../../content/posts/*.md', { query: '?raw', import: 'default', eager: true });
+    const modules = import.meta.glob('../../content/posts/*.md', { query: '?raw', import: 'default', eager: true });
 
     const blogs: BlogPost[] = Object.entries(modules).map(([path, content]) => {
         const { frontmatter, content: body } = parseMarkdown(content as string);
