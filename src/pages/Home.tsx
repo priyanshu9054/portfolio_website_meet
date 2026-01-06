@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import SkillMarquee from '../components/Skills/SkillMarquee';
+import ProjectsIntro from '../components/Projects/ProjectsIntro';
 import ProjectDeck from '../components/Projects/ProjectDeck';
 import ProjectModal from '../components/Projects/ProjectModal';
 import KnowledgeGraph from '../components/Skills/KnowledgeGraph';
@@ -15,12 +16,19 @@ const Home: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     return (
-        <main>
+        <main className="bg-[#050505]">
             <Hero />
             <SkillMarquee />
+
+            {/* Projects Flow */}
+            <ProjectsIntro />
             <ProjectDeck onProjectSelect={setSelectedProject} />
-            <KnowledgeGraph onProjectSelect={setSelectedProject} />
-            <Certifications />
+
+            {/* Continue Document Flow */}
+            <div className="relative z-20 bg-[#050505]">
+                <KnowledgeGraph onProjectSelect={setSelectedProject} />
+                <Certifications />
+            </div>
 
             <section className="py-48 px-6 max-w-7xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-32">

@@ -110,14 +110,10 @@ const ProjectDeck: React.FC<ProjectDeckProps> = ({ onProjectSelect }) => {
     <section
       ref={container}
       id="projects"
-      className="relative bg-[#050505]"
+      className="relative bg-[#050505] z-[5]"
       style={{ height: `${homeProjects.length * 100}vh` }}
     >
-      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center pointer-events-none z-0">
-        <h2 className="text-[15vw] font-black tracking-tighter text-white/5 select-none leading-none uppercase">PROJECTS</h2>
-      </div>
-
-      <div className="relative z-10 w-full">
+      <div className="relative w-full">
         {homeProjects.map((project, i) => (
           <StickyProjectCard
             key={project.id}
