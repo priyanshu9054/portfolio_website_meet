@@ -5,7 +5,7 @@ import SkillMarquee from '../components/Skills/SkillMarquee';
 import ProjectsIntro from '../components/Projects/ProjectsIntro';
 import ProjectDeck from '../components/Projects/ProjectDeck';
 import ProjectModal from '../components/Projects/ProjectModal';
-import KnowledgeGraph from '../components/Skills/KnowledgeGraph';
+import Skills from '../components/Skills/Skills';
 import Certifications from '../components/Timeline/Certifications';
 import Timeline from '../components/Timeline/Timeline';
 import timelineData from "../../content/data/timeline.json";
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 
             {/* Continue Document Flow */}
             <div className="relative z-20 bg-[#050505]">
-                <KnowledgeGraph onProjectSelect={setSelectedProject} />
+                <Skills />
                 <Certifications />
             </div>
 
