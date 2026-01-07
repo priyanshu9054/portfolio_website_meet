@@ -5,21 +5,24 @@
             "institution": "Georgia Institute of Technology",
             "role": "M.S. in Computer Science (AI Track)",
             "duration": "2022 — 2025",
-            "description": "Deep specialization in ML, DL, and Reinforcement Learning. Grade: A."
+            "description": "Deep specialization in ML, DL, and Reinforcement Learning. Grade: A.",
+            "logo": "/education-logos/gt.png"
         },
         {
             "id": "upenn",
             "institution": "University of Pennsylvania",
             "role": "MicroMasters in Robotics",
             "duration": "2020 — 2020",
-            "description": "Intensive series covering Kinematics, Dynamics, Control, and Vision-based Navigation."
+            "description": "Intensive series covering Kinematics, Dynamics, Control, and Vision-based Navigation.",
+            "logo": "/education-logos/upenn.png"
         },
         {
             "id": "msu",
             "institution": "MSU Baroda",
             "role": "B.E. in Electronics (Instrumentation)",
             "duration": "2013 — 2017",
-            "description": "Focused on Embedded Systems and Signal Processing. Graduated with Distinction."
+            "description": "Focused on Embedded Systems and Signal Processing. Graduated with Distinction.",
+            "logo": "/education-logos/msu.png"
         }
     ],
     "experience": [

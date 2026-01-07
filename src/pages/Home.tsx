@@ -7,7 +7,8 @@ import ProjectDeck from '../components/Projects/ProjectDeck';
 import ProjectModal from '../components/Projects/ProjectModal';
 import Skills from '../components/Skills/Skills';
 import Certifications from '../components/Timeline/Certifications';
-import Timeline from '../components/Timeline/Timeline';
+import Education from '../components/Education/Education';
+import Experience from '../components/Experience/Experience';
 import timelineData from "../../content/data/timeline.json";
 import { Project } from '../types';
 import { AnimatePresence } from 'framer-motion';
@@ -30,12 +31,10 @@ const Home: React.FC = () => {
                 <Certifications />
             </div>
 
-            <section className="py-48 px-6 max-w-7xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-32">
-                    <Timeline title="Education" items={timelineData.education} />
-                    <Timeline title="Experience" items={timelineData.experience} />
-                </div>
-            </section>
+            <Education items={timelineData.education} />
+            <Experience items={timelineData.experience} />
+
+            <div className="pb-20" />
 
             <AnimatePresence>
                 {selectedProject && (
