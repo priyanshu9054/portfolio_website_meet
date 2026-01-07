@@ -3,19 +3,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { X, Calendar } from 'lucide-react';
 import { BlogPost } from '../../types';
+import SkillTag from '../ui/SkillTag';
 
 interface BlogModalProps {
     blog: BlogPost;
     onClose: () => void;
+    className?: string;
 }
 
-const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose }) => {
+const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose, className = "" }) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/95 backdrop-blur-xl"
+            className={`fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/95 backdrop-blur-xl ${className}`}
             onClick={onClose}
         >
             <motion.div
@@ -35,7 +37,7 @@ const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose }) => {
                     <h2 className="text-5xl md:text-6xl font-bold mb-12 tracking-tighter leading-none">{blog.title}</h2>
                     <div className="flex flex-wrap gap-3 mb-12">
                         {blog.tags.map(t => (
-                            <span key={t} className="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-[10px] font-bold uppercase tracking-widest">{t}</span>
+                            <SkillTag key={t} name={t} className="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-blue-500/20 hover:text-blue-300" />
                         ))}
                     </div>
                 </div>

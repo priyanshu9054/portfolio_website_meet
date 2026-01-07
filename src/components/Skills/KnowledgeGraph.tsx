@@ -5,6 +5,7 @@ import knowledgeCards from '../../../content/data/knowledge.json';
 import projects from '../../../content/data/projects.json';
 import { Project } from '../../types';
 import { Plus, Minus, Cpu, ChevronRight } from 'lucide-react';
+import SkillTag from '../ui/SkillTag';
 
 interface KnowledgeGraphProps {
   onProjectSelect: (project: Project) => void;
@@ -96,9 +97,7 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                             <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Tools & Stack</h4>
                             <div className="flex flex-wrap gap-2">
                               {card.tools.map(tool => (
-                                <span key={tool} className="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[11px] text-gray-400 font-medium">
-                                  {tool}
-                                </span>
+                                <SkillTag key={tool} name={tool} className="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[11px] text-gray-400 font-medium hover:bg-white/10 hover:text-white" />
                               ))}
                             </div>
                           </div>

@@ -3,19 +3,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../../types';
 import { X, Github } from 'lucide-react';
+import SkillTag from '../ui/SkillTag';
 
 interface ProjectModalProps {
     project: Project;
     onClose: () => void;
+    className?: string;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, className = "" }) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-6 bg-black/95 backdrop-blur-xl"
+            className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-6 bg-black/95 backdrop-blur-xl ${className}`}
             onClick={onClose}
         >
             <motion.div
@@ -46,7 +48,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                         <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter leading-none">{project.title}</h2>
                         <div className="flex flex-wrap gap-3 mb-8">
                             {project.tags.map(tag => (
-                                <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-white/40">{tag}</span>
+                                <SkillTag key={tag} name={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-white/40 hover:text-white" />
                             ))}
                         </div>
                     </div>

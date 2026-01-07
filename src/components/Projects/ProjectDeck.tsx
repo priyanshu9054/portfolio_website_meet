@@ -5,6 +5,7 @@ import projectsData from '../../../content/data/projects.json';
 import { Project } from '../../types';
 import { ArrowUpRight, Github } from 'lucide-react';
 import ProjectModal from './ProjectModal';
+import SkillTag from '../ui/SkillTag';
 
 export { ProjectModal };
 
@@ -36,7 +37,7 @@ const StickyProjectCard: React.FC<{
           <div className="space-y-8 text-left">
             <div className="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span key={tag} className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30">{tag}</span>
+                <SkillTag key={tag} name={tag} className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/30 hover:text-white" />
               ))}
             </div>
             <div className="space-y-4">

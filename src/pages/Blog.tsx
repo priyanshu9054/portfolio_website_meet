@@ -5,6 +5,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { BlogPost } from '../types';
 import BlogModal from '../components/Blog/BlogModal';
 import { parseMarkdown } from '../utils/markdown';
+import SkillTag from '../components/ui/SkillTag';
 
 const BlogPage = () => {
     const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
@@ -42,7 +43,7 @@ const BlogPage = () => {
                             <Calendar className="w-4 h-4" /> {blog.date}
                             <span className="w-1 h-1 bg-white/10 rounded-full" />
                             <div className="flex gap-4">
-                                {blog.tags.map(t => <span key={t} className="text-blue-500">{t}</span>)}
+                                {blog.tags.map(t => <SkillTag key={t} name={t} className="text-blue-500 hover:text-blue-400" />)}
                             </div>
                         </div>
                         <h2 className="text-4xl font-bold mb-6 tracking-tighter group-hover:translate-x-4 transition-transform duration-500">{blog.title}</h2>

@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import SkillTag from '../ui/SkillTag';
+
 const technicalSkills = [
     "Python", "C++", "Embedded C", "RL", "MARL", "Dynamics & Control",
     "Robotics", "ROS", "CUDA", "FPGA", "MATLAB", "Linear Algebra"
@@ -10,12 +12,6 @@ const frameworksTools = [
     "PyTorch", "TensorFlow", "OpenAI", "HuggingFace", "Docker",
     "AWS", "SQL", "OpenCV", "Git", "Linux", "Simulink"
 ];
-
-const SkillChip = ({ name }: { name: string }) => (
-    <span className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-sm text-white/70 font-medium hover:bg-white/[0.08] hover:text-white transition-all cursor-default select-none">
-        {name}
-    </span>
-);
 
 const Skills: React.FC = () => {
     return (
@@ -30,7 +26,11 @@ const Skills: React.FC = () => {
                     {/* Technical Skills Group */}
                     <div className="flex flex-wrap gap-3">
                         {technicalSkills.map((skill) => (
-                            <SkillChip key={skill} name={skill} />
+                            <SkillTag
+                                key={skill}
+                                name={skill}
+                                className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-sm text-white/70 font-medium hover:bg-white/[0.08] hover:text-white"
+                            />
                         ))}
                     </div>
 
@@ -39,7 +39,11 @@ const Skills: React.FC = () => {
                     {/* Frameworks / Tools Group */}
                     <div className="flex flex-wrap gap-3">
                         {frameworksTools.map((skill) => (
-                            <SkillChip key={skill} name={skill} />
+                            <SkillTag
+                                key={skill}
+                                name={skill}
+                                className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-sm text-white/70 font-medium hover:bg-white/[0.08] hover:text-white"
+                            />
                         ))}
                     </div>
                 </div>

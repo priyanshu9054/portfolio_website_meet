@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import projectsData from "../../content/data/projects.json";
 import { Project } from '../types';
 import ProjectModal from '../components/Projects/ProjectModal';
+import SkillTag from '../components/ui/SkillTag';
 
 const ProjectsPage = () => {
     const [query, setQuery] = useState('');
@@ -45,7 +46,7 @@ const ProjectsPage = () => {
                         <div className="px-6 pb-6">
                             <h3 className="text-2xl font-bold mb-4 tracking-tighter">{project.title}</h3>
                             <div className="flex flex-wrap gap-2 mb-6">
-                                {project.tags.map(t => <span key={t} className="text-[10px] uppercase font-bold tracking-widest text-white/20">{t}</span>)}
+                                {project.tags.map(t => <SkillTag key={t} name={t} className="text-[10px] uppercase font-bold tracking-widest text-white/20 hover:text-white" />)}
                             </div>
                             {project.github && (
                                 <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-blue-500 hover:text-white transition-colors">
