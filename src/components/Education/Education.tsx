@@ -67,7 +67,7 @@ const EducationCard: React.FC<{ item: EducationItem; index: number }> = ({ item,
 
 const Education: React.FC<EducationProps> = ({ items }) => {
     return (
-        <section className="relative py-20 bg-gradient-to-b from-black to-black/95 overflow-hidden">
+        <section className="relative py-20 overflow-hidden">
             {/* Header: Placed above haloContainer */}
             <div className="relative z-20 px-6 mb-8">
                 <div className="max-w-7xl mx-auto flex items-center gap-4">
@@ -82,20 +82,20 @@ const Education: React.FC<EducationProps> = ({ items }) => {
                 <div
                     className="absolute inset-0 overflow-hidden pointer-events-none select-none"
                     style={{
-                        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 100%)',
-                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 100%)'
+                        maskImage: 'linear-gradient(to bottom, transparent, #003057 15%, #003057 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, #003057 15%, #003057 100%)'
                     }}
                 >
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
                         <div
-                            className="w-[150vmax] h-[150vmax] opacity-[0.06]"
+                            className="w-[150vmax] h-[150vmax] opacity-[0.08]"
                             style={{
                                 background: `repeating-radial-gradient(
                                     circle at center,
                                     transparent 0,
                                     transparent 120px,
-                                    white 120px,
-                                    white 121px
+                                    #D6DBD4 120px,
+                                    #D6DBD4 121px
                                 )`
                             }}
                         />

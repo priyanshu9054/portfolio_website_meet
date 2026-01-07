@@ -23,11 +23,11 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
   };
 
   return (
-    <section className="py-48 px-6 bg-[#050505] relative overflow-hidden">
+    <section className="py-48 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-32 space-y-6">
           <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">Specialized Intelligence</span>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none">THE KNOWLEDGE <br /> <span className="text-white/30 italic">GRAPH</span></h2>
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white">THE KNOWLEDGE <br /> <span className="text-white/30 italic">GRAPH</span></h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -39,24 +39,25 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                 key={card.id}
                 layout
                 className={`
-                  glass rounded-[4rem] p-12 cursor-pointer transition-all duration-700
-                  ${isExpanded ? 'bg-white/[0.04] border-white/20' : 'hover:bg-white/[0.04]'}
+                  rounded-[4rem] p-12 cursor-pointer transition-all duration-700 shadow-xl
+                  ${isExpanded ? 'bg-[#F9F6E5] border-[#D6DBD4]/40' : 'bg-[#F9F6E5]/95 hover:bg-[#F9F6E5] border-[#D6DBD4]/20'}
+                  border
                 `}
                 onClick={() => setExpandedId(isExpanded ? null : card.id)}
               >
                 <div className="flex justify-between items-center mb-10">
                   <div className="flex items-center gap-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-2xl bg-[#003057] text-white flex items-center justify-center">
                       <Cpu className="w-6 h-6" />
                     </div>
-                    <h3 className="text-3xl font-bold tracking-tighter">{card.title}</h3>
+                    <h3 className="text-3xl font-bold tracking-tighter text-[#003057]">{card.title}</h3>
                   </div>
-                  <div className="p-2 rounded-full border border-white/10">
+                  <div className="p-2 rounded-full border border-[#003057]/10 text-[#003057]">
                     {isExpanded ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </div>
 
-                <motion.p layout="position" className="text-gray-400 text-lg font-light leading-relaxed mb-6">
+                <motion.p layout="position" className="text-[#003057]/70 text-lg font-light leading-relaxed mb-6">
                   {card.summary}
                 </motion.p>
 
@@ -66,26 +67,26 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="space-y-12 mt-12 pt-12 border-t border-white/5"
+                      className="space-y-12 mt-12 pt-12 border-t border-[#003057]/5"
                     >
                       <div className="grid md:grid-cols-1 gap-12">
                         <div>
-                          <h4 className="text-[10px] font-bold text-blue-500 uppercase tracking-[0.4em] mb-4">What was done</h4>
-                          <p className="text-xl text-white/80 font-light leading-relaxed">{card.details}</p>
+                          <h4 className="text-[10px] font-bold text-[#A4925A] uppercase tracking-[0.4em] mb-4">What was done</h4>
+                          <p className="text-xl text-[#003057]/80 font-light leading-relaxed">{card.details}</p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-12">
                           <div>
-                            <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Applied Projects</h4>
+                            <h4 className="text-[10px] font-bold text-[#003057]/30 uppercase tracking-[0.4em] mb-6">Applied Projects</h4>
                             <div className="space-y-4">
                               {card.projects.map(proj => (
                                 <button
                                   key={proj}
                                   onClick={(e) => handleProjectClick(e, proj)}
-                                  className="flex items-center text-white/60 hover:text-white transition-colors group/link text-left w-full"
+                                  className="flex items-center text-[#003057]/60 hover:text-[#003057] transition-colors group/link text-left w-full"
                                 >
-                                  <ChevronRight className="w-4 h-4 mr-3 text-blue-500 group-hover/link:translate-x-1 transition-transform" />
-                                  <span className="text-base border-b border-white/0 group-hover/link:border-white/20">
+                                  <ChevronRight className="w-4 h-4 mr-3 text-[#A4925A] group-hover/link:translate-x-1 transition-transform" />
+                                  <span className="text-base border-b border-transparent group-hover/link:border-[#003057]/20">
                                     {proj}
                                   </span>
                                 </button>
@@ -94,10 +95,10 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                           </div>
 
                           <div>
-                            <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">Tools & Stack</h4>
+                            <h4 className="text-[10px] font-bold text-[#003057]/30 uppercase tracking-[0.4em] mb-6">Tools & Stack</h4>
                             <div className="flex flex-wrap gap-2">
                               {card.tools.map(tool => (
-                                <SkillTag key={tool} name={tool} className="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[11px] text-gray-400 font-medium hover:bg-white/10 hover:text-white" />
+                                <SkillTag key={tool} name={tool} className="px-4 py-2 bg-[#003057]/5 border border-[#003057]/5 rounded-full text-[11px] text-[#003057]/70 font-medium hover:bg-[#003057]/10 hover:text-[#003057]" />
                               ))}
                             </div>
                           </div>

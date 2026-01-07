@@ -4,7 +4,7 @@ import { Linkedin, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="py-24 px-6 border-t border-white/5 bg-[#050505]">
+        <footer className="py-24 px-6 border-t border-white/5 bg-[#003057]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
                 <div className="space-y-6">
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">LET'S CONNECT<span className="text-white/20">.</span></h2>

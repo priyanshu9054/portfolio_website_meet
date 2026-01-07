@@ -37,18 +37,18 @@ const BlogPage = () => {
                     <article
                         key={blog.id}
                         onClick={() => setSelectedBlog(blog)}
-                        className="glass p-12 rounded-[3.5rem] group cursor-pointer hover:bg-white/[0.04] transition-all"
+                        className="bg-[#F9F6E5] p-12 rounded-[3.5rem] group cursor-pointer hover:bg-[#F9F6E5]/90 transition-all shadow-xl border border-[#D6DBD4]/20"
                     >
-                        <div className="flex items-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                        <div className="flex items-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-[#003057]/40">
                             <Calendar className="w-4 h-4" /> {blog.date}
-                            <span className="w-1 h-1 bg-white/10 rounded-full" />
+                            <span className="w-1 h-1 bg-[#003057]/10 rounded-full" />
                             <div className="flex gap-4">
-                                {blog.tags.map(t => <SkillTag key={t} name={t} className="text-blue-500 hover:text-blue-400" />)}
+                                {blog.tags.map(t => <SkillTag key={t} name={t} className="text-[#A4925A] hover:text-[#003057]" />)}
                             </div>
                         </div>
-                        <h2 className="text-4xl font-bold mb-6 tracking-tighter group-hover:translate-x-4 transition-transform duration-500">{blog.title}</h2>
-                        <p className="text-gray-400 text-xl font-light leading-relaxed mb-10">{blog.excerpt}</p>
-                        <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.4em]">
+                        <h2 className="text-4xl font-bold mb-6 tracking-tighter group-hover:translate-x-4 transition-transform duration-500 text-[#003057]">{blog.title}</h2>
+                        <p className="text-[#003057]/70 text-xl font-light leading-relaxed mb-10">{blog.excerpt}</p>
+                        <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.4em] text-[#003057]">
                             Read Entry <ArrowRight className="w-5 h-5" />
                         </div>
                     </article>

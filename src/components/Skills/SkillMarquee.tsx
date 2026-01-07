@@ -5,13 +5,13 @@ import techStack from '../../../content/data/tech-stack.json';
 
 const SkillMarquee: React.FC = () => {
   return (
-    <div className="py-10 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden border-y border-white/5">
+    <div className="py-10 overflow-hidden border-y border-white/5">
 
       {/* Marquee Container */}
       <div className="relative flex whitespace-nowrap group">
         {/* Fade edges for smooth visual effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#003057] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#003057] to-transparent z-10 pointer-events-none" />
 
         <motion.div
           animate={{ x: [0, -1920] }}

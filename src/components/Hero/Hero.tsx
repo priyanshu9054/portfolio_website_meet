@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       {/* Background Effect */}
       <motion.div
         style={{ x, y }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[180px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D6DBD4]/5 blur-[180px] rounded-full pointer-events-none"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
@@ -27,14 +27,14 @@ const Hero: React.FC = () => {
           className="relative group"
           style={{ x: xFg * 0.5, y: yFg * 0.5 }} // Subtle parallax on image
         >
-          <div className="aspect-square rounded-[4rem] overflow-hidden border border-white/10 glass shadow-2xl shadow-blue-500/10">
+          <div className="aspect-square rounded-[4rem] overflow-hidden border border-[#D6DBD4]/20 glass shadow-2xl shadow-[#003057]/20">
             <img
               src={heroImage}
               alt="Meet Kumar Doshi"
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/5 backdrop-blur-3xl rounded-3xl border border-white/10 -z-10 animate-pulse" />
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#F9F6E5]/5 backdrop-blur-3xl rounded-3xl border border-[#F9F6E5]/10 -z-10 animate-pulse" />
         </motion.div>
 
         {/* Text on right */}
@@ -61,8 +61,8 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl text-gray-400 font-light max-w-2xl leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: description.replace('Neural Foundations', '<span class="text-white">Neural Foundations</span>') }}
+            className="text-xl md:text-2xl text-[#D6DBD4] font-light max-w-2xl leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: description.replace('Neural Foundations', '<span class="text-[#F9F6E5]">Neural Foundations</span>') }}
           />
 
           <motion.div
@@ -71,10 +71,10 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap gap-6"
           >
-            <a href={links.primary.url} className="px-10 py-5 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-all text-xs uppercase tracking-[0.2em]">
+            <a href={links.primary.url} className="px-10 py-5 bg-[#003057] text-white border border-[#D6DBD4]/20 rounded-full font-bold hover:bg-[#A4925A] transition-all text-xs uppercase tracking-[0.2em]">
               {links.primary.text}
             </a>
-            <a href={links.secondary.url} target="_blank" className="px-10 py-5 border border-white/10 text-white rounded-full font-bold hover:bg-white/5 transition-all text-xs uppercase tracking-[0.2em]">
+            <a href={links.secondary.url} target="_blank" className="px-10 py-5 border border-white/10 text-white rounded-full font-bold hover:bg-[#F9F6E5]/10 transition-all text-xs uppercase tracking-[0.2em]">
               {links.secondary.text}
             </a>
           </motion.div>
