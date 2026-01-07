@@ -18,7 +18,7 @@ const SkillTag: React.FC<SkillTagProps> = ({ name, className = "" }) => {
     return (
         <span
             onClick={handleClick}
-            className={`cursor-pointer hover:bg-white/20 transition-all ${className}`}
+            className={`cursor-pointer hover:bg-[#003057]/5 transition-all ${className}`}
         >
             {name}
         </span>

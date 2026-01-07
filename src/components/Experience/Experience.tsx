@@ -24,19 +24,19 @@ const ExperienceRow: React.FC<{ item: ExperienceItem; index: number }> = ({ item
         >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:items-center">
                 <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-[#F9F6E5] group-hover:text-[#A4925A] transition-colors">
+                    <h3 className="text-xl font-bold text-[#003057] group-hover:text-[#A4925A] transition-colors">
                         {item.role}
                     </h3>
-                    <p className="text-sm text-[#D6DBD4] font-light max-w-2xl leading-relaxed">
+                    <p className="text-sm text-[#003057]/70 font-light max-w-2xl leading-relaxed">
                         {item.description}
                     </p>
                 </div>
 
                 <div className="flex flex-col md:items-end">
-                    <span className="text-lg font-medium text-[#F9F6E5]">
+                    <span className="text-lg font-medium text-[#003057]">
                         {item.institution}
                     </span>
-                    <span className="text-sm font-medium text-[#D6DBD4]/60">
+                    <span className="text-sm font-medium text-[#003057]/40">
                         {item.duration}
                     </span>
                 </div>
@@ -49,8 +49,8 @@ const Experience: React.FC<ExperienceProps> = ({ items }) => {
     return (
         <section className="pb-24 max-w-7xl mx-auto px-6">
             <div className="flex items-center gap-4 mb-12">
-                <h2 className="text-sm font-bold tracking-[0.2em] text-white/40 uppercase">Experience</h2>
-                <div className="h-[1px] flex-1 bg-white/10" />
+                <h2 className="text-sm font-bold tracking-[0.2em] text-[#003057]/40 uppercase">Experience</h2>
+                <div className="h-[1px] flex-1 bg-[#003057]/10" />
             </div>
 
             <div className="flex flex-col">

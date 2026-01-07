@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import knowledgeCards from '../../../content/data/knowledge.json';
 import projects from '../../../content/data/projects.json';
@@ -26,8 +26,8 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
     <section className="py-48 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-32 space-y-6">
-          <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">Specialized Intelligence</span>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white">THE KNOWLEDGE <br /> <span className="text-white/30 italic">GRAPH</span></h2>
+          <span className="text-[#003057]/40 font-bold uppercase tracking-[0.6em] text-[10px]">Specialized Intelligence</span>
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-[#003057]">THE KNOWLEDGE <br /> <span className="text-[#003057]/10 italic">GRAPH</span></h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">

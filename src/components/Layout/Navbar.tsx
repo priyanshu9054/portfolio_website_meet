@@ -1,7 +1,4 @@
-
-import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const navItems = [
@@ -12,12 +9,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[1000] border-b border-white/5 bg-[#003057]/40 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 w-full z-[1000] border-b border-[#F9F6E5]/10 bg-[#A4925A] shadow-lg">
       <div className="max-w-[1400px] mx-auto px-8 h-24 flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 relative">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#F9F6E5]">
               <path d="M12 8C12 8 8 12 8 20C8 28 12 32 12 32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
               <path d="M20 8V32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
               <path d="M28 8C28 8 32 12 32 20C32 28 28 32 28 32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
@@ -34,8 +31,8 @@ const Navbar = () => {
               to={item.path}
               end={item.path === '/'}
               className={({ isActive }) => `
-                text-[11px] font-medium uppercase tracking-[0.2em] transition-all hover:text-white
-                ${isActive ? 'text-white' : 'text-white/40'}
+                text-[11px] font-medium uppercase tracking-[0.2em] transition-all hover:text-[#F9F6E5]
+                ${isActive ? 'text-[#F9F6E5]' : 'text-[#F9F6E5]/60'}
               `}
             >
               {item.label}
@@ -49,7 +46,7 @@ const Navbar = () => {
             href="https://www.linkedin.com/in/meetkumar-doshi"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 border border-[#A4925A]/40 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#A4925A] hover:text-white transition-all duration-500 shadow-xl shadow-[#A4925A]/5"
+            className="px-8 py-3.5 border border-[#F9F6E5]/40 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#F9F6E5] hover:text-[#A4925A] transition-all duration-500 shadow-xl shadow-black/5 text-[#F9F6E5]"
           >
             Get in Touch
           </a>

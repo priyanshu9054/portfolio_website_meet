@@ -5,13 +5,13 @@ import techStack from '../../../content/data/tech-stack.json';
 
 const SkillMarquee: React.FC = () => {
   return (
-    <div className="py-10 overflow-hidden border-y border-white/5">
+    <div className="py-10 overflow-hidden border-y border-[#003057]/5">
 
       {/* Marquee Container */}
       <div className="relative flex whitespace-nowrap group">
         {/* Fade edges for smooth visual effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#003057] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#003057] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#D6DBD4] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#D6DBD4] to-transparent z-10 pointer-events-none" />
 
         <motion.div
           animate={{ x: [0, -1920] }}
@@ -30,8 +30,8 @@ const SkillMarquee: React.FC = () => {
               style={{ '--logo-color': logo.color } as React.CSSProperties}
             >
               {/* Card Container */}
-              <div className="flex flex-col items-center gap-3 px-4 py-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm
-                            hover:bg-white/[0.06] hover:border-white/10 hover:scale-105 
+              <div className="flex flex-col items-center gap-3 px-4 py-5 rounded-2xl bg-[#003057]/[0.02] border border-[#003057]/5 backdrop-blur-sm
+                            hover:bg-[#003057]/[0.06] hover:border-[#003057]/10 hover:scale-105 
                             transition-all duration-500 ease-out min-w-[90px] md:min-w-[100px]">
 
                 {/* Icon */}
@@ -40,7 +40,7 @@ const SkillMarquee: React.FC = () => {
                 </div>
 
                 {/* Name Label */}
-                <span className="text-xs md:text-sm font-medium text-white/30 group-hover/logo:text-white/80 
+                <span className="text-xs md:text-sm font-medium text-[#003057]/30 group-hover/logo:text-[#003057]/80 
                                transition-colors duration-500 tracking-wide">
                   {logo.name}
                 </span>

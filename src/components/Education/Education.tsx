@@ -47,16 +47,16 @@ const EducationCard: React.FC<{ item: EducationItem; index: number }> = ({ item,
 
             {/* Text Content */}
             <div className="flex flex-col gap-1">
-                <h3 className="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-base font-semibold text-[#003057] group-hover:text-[#A4925A] transition-colors">
                     {item.role}
                 </h3>
-                <p className="text-sm font-medium text-white/50">
+                <p className="text-sm font-medium text-[#003057]/50">
                     {item.institution}
                 </p>
 
                 {/* Hover Reveal Date */}
                 <div className="h-6 overflow-hidden relative">
-                    <p className="text-xs font-medium text-white/30 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-xs font-medium text-[#A4925A] transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                         {item.duration}
                     </p>
                 </div>
@@ -71,8 +71,8 @@ const Education: React.FC<EducationProps> = ({ items }) => {
             {/* Header: Placed above haloContainer */}
             <div className="relative z-20 px-6 mb-8">
                 <div className="max-w-7xl mx-auto flex items-center gap-4">
-                    <h2 className="text-sm font-bold tracking-[0.2em] text-white/40 uppercase">Affiliations</h2>
-                    <div className="h-[1px] flex-1 bg-white/10" />
+                    <h2 className="text-sm font-bold tracking-[0.2em] text-[#003057]/40 uppercase">Affiliations</h2>
+                    <div className="h-[1px] flex-1 bg-[#003057]/10" />
                 </div>
             </div>
 
@@ -82,20 +82,20 @@ const Education: React.FC<EducationProps> = ({ items }) => {
                 <div
                     className="absolute inset-0 overflow-hidden pointer-events-none select-none"
                     style={{
-                        maskImage: 'linear-gradient(to bottom, transparent, #003057 15%, #003057 100%)',
-                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, #003057 15%, #003057 100%)'
+                        maskImage: 'linear-gradient(to bottom, transparent, #D6DBD4 15%, #D6DBD4 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, #D6DBD4 15%, #D6DBD4 100%)'
                     }}
                 >
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
                         <div
-                            className="w-[150vmax] h-[150vmax] opacity-[0.08]"
+                            className="w-[150vmax] h-[150vmax] opacity-[0.1]"
                             style={{
                                 background: `repeating-radial-gradient(
                                     circle at center,
                                     transparent 0,
                                     transparent 120px,
-                                    #D6DBD4 120px,
-                                    #D6DBD4 121px
+                                    #003057 120px,
+                                    #003057 121px
                                 )`
                             }}
                         />

@@ -17,7 +17,7 @@ const Home: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     return (
-        <main className="bg-[#050505]">
+        <main className="bg-transparent">
             <Hero />
             <SkillMarquee />
 
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
             <ProjectDeck onProjectSelect={setSelectedProject} />
 
             {/* Continue Document Flow */}
-            <div className="relative z-20 bg-[#050505]">
+            <div className="relative z-20">
                 <Skills />
                 <Certifications />
             </div>

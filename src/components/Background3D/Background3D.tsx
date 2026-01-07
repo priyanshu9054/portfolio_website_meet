@@ -23,7 +23,7 @@ const fragmentShader = `
     varying vec2 vUv;
 
     // -------------------------------------------------------------------------
-    // Noise Functions
+    // Utilities
     // -------------------------------------------------------------------------
     vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
     vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -48,69 +48,63 @@ const fragmentShader = `
     // Main
     // -------------------------------------------------------------------------
     void main() {
-        // Normalize coordinates with aspect ratio correction
         vec2 st = gl_FragCoord.xy / uResolution.xy;
         float aspect = uResolution.x / uResolution.y;
         vec2 correctedSt = vec2(st.x * aspect, st.y);
         
-        // Mouse influence (very subtle)
-        vec2 mouseTarget = vec2(uMouse.x * aspect, uMouse.y);
-        float mouseDist = distance(correctedSt, mouseTarget);
+        // Parallax and Mouse Interaction
+        vec2 mousePos = uMouse;
+        vec2 parallax = (mousePos - 0.5) * 0.05;
+        vec2 center = vec2(0.5 * aspect, 0.5) + parallax;
+        
+        // Distance for radial depth
+        float dist = distance(correctedSt, center);
         
         // Palette Colors
-        vec3 colorDeep = vec3(0.0, 0.188, 0.341);    // #003057 Deep Space Blue
-        vec3 colorMid  = vec3(0.839, 0.859, 0.831);  // #D6DBD4 Dust Grey
-        vec3 colorHigh = vec3(0.976, 0.965, 0.898);  // #F9F6E5 Ivory Mist
-        vec3 colorAcc  = vec3(0.643, 0.573, 0.353);  // #A4925A Camel
+        vec3 colorBase = vec3(0.839, 0.859, 0.831);  // #D6DBD4 Dust Grey
+        vec3 colorEdge = vec3(0.739, 0.759, 0.731);    // Subtle Darker Grey for Depth (derived from #D6DBD4)
+        vec3 colorHigh = vec3(0.976, 0.965, 0.898);  // #F9F6E5 Ivory Mist (Highlight)
+        vec3 colorAcc  = vec3(0.643, 0.573, 0.353);  // #A4925A Camel (Gold/Specular)
         
-        // Dynamic Depth / Movement
-        // Scroll slightly shifts the center or 'phase' of the waves
-        float scrollOffset = uScroll * 0.15; 
+        // Noise (Very subtle)
+        float noise = snoise(correctedSt * 3.0 + uTime * 0.05) * 0.02;
         
-        // Depth intensity shift (±5% per scroll)
-        float depthBoost = 1.0 + (uScroll - 0.5) * 0.1; 
+        // Base Gradient Blend (Grey Theme: Dust Grey center, Subtle darker grey outer edges)
+        float distFactor = smoothstep(0.0, 0.9, dist + noise);
+        vec3 baseColor = mix(colorHigh, colorBase, distFactor);
         
-        // Base Noise Field (Large, slow moving)
-        float n = snoise(correctedSt * 1.2 + vec2(uTime * 0.04, uTime * 0.015 + scrollOffset));
-        
-        // Radial Gradient Logic
-        vec2 center = vec2(0.5 * aspect, 0.5);
-        // Slightly offset center based on mouse and scroll
-        center += (uMouse - 0.5) * 0.08;
-        center.y += (uScroll - 0.5) * 0.05;
-        
-        float dist = length(correctedSt - center);
-        
-        // Radial Waves (Concentric depth lines)
-        float wave = sin(dist * 7.5 - uTime * 0.25 + scrollOffset * 5.0) * 0.5 + 0.5;
-        wave = pow(wave, 3.0); // Sharpen waves for editorial look
-        
-        // Mix Noise into distance to make it organic
-        float organicDist = dist + n * 0.15 + wave * 0.03;
-        
-        // Color Interpolation Steps (Strict Adherence)
-        // Base Blend: Deep Space Blue
-        vec3 color = colorDeep;
-        
-        // First blend: Deep -> Mid (Vibrancy check: make it clearly visible)
-        float midStop = 0.42 + n * 0.08; 
-        float firstBlend = smoothstep(-0.1, midStop, organicDist);
-        color = mix(colorDeep, colorMid, firstBlend * 0.75 * depthBoost);
-        
-        // Second blend: -> Ivory (Outer edges)
-        float outerStop = 0.72;
-        float secondBlend = smoothstep(midStop, outerStop + 0.3, organicDist);
-        color = mix(color, colorHigh, secondBlend * 0.55); 
-        
-        // Camel Interaction Tint (3-5% opacity)
-        float cursorGlow = 1.0 - smoothstep(0.0, 0.35, mouseDist);
-        color = mix(color, colorAcc, cursorGlow * 0.04);
+        float edgeLayer = smoothstep(0.4, 1.2, dist + noise);
+        baseColor = mix(baseColor, colorEdge, edgeLayer * 0.4);
 
-        // Final Vignette for depth - darker but still within palette range
-        float vignette = 1.0 - smoothstep(0.55, 1.85, dist);
-        color *= (0.85 + 0.15 * vignette);
+        // Material Effect - Soft Matte Surface
+        vec2 normal = normalize(correctedSt - center);
+        vec3 surfaceNormal = normalize(vec3(normal * 0.05, 1.0));
+        
+        // Light source (follows cursor)
+        vec3 lightPos = vec3(mousePos.x * aspect, mousePos.y, 0.3);
+        vec3 lightDir = normalize(lightPos - vec3(correctedSt, 0.0));
+        
+        // Diffuse Lighting for Depth
+        float diff = max(dot(surfaceNormal, lightDir), 0.0);
+        baseColor *= (0.95 + 0.05 * diff);
 
-        gl_FragColor = vec4(color, 1.0);
+        // Specular Highlight (Camel accent)
+        vec3 viewDir = vec3(0.0, 0.0, 1.0);
+        vec3 halfDir = normalize(lightDir + viewDir);
+        float spec = pow(max(dot(surfaceNormal, halfDir), 0.0), 16.0);
+        
+        float goldIntensity = spec * 0.08; 
+        vec3 highlightColor = mix(baseColor, colorAcc, goldIntensity);
+        
+        // Reflected light tint based on cursor
+        float reflectedTint = smoothstep(0.3, 0.0, distance(correctedSt, vec2(mousePos.x * aspect, mousePos.y)));
+        highlightColor = mix(highlightColor, colorAcc, reflectedTint * 0.02);
+
+        // Soft parallax depth lines
+        float depthLines = sin(dist * 20.0 - uTime * 0.05) * 0.003;
+        highlightColor += depthLines;
+
+        gl_FragColor = vec4(highlightColor, 1.0);
     }
 `;
 
@@ -221,7 +215,7 @@ const Background3D: React.FC = () => {
             <div
                 className="fixed inset-0 -z-10"
                 style={{
-                    background: 'radial-gradient(circle at center, #003057 0%, #D6DBD4 70%, #F9F6E5 100%)'
+                    background: 'radial-gradient(circle at center, #F9F6E5 0%, #D6DBD4 70%, #C6CBC4 100%)'
                 }}
             />
         );

@@ -12,15 +12,15 @@ const About: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-32 mb-48">
                 <div className="space-y-16">
                     <div className="space-y-8">
-                        <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">{subtitle}</span>
-                        <h1 className="text-7xl md:text-[8rem] font-bold tracking-tighter leading-none italic">{title}</h1>
+                        <span className="text-[#003057]/40 font-bold uppercase tracking-[0.6em] text-[10px]">{subtitle}</span>
+                        <h1 className="text-7xl md:text-[8rem] font-bold tracking-tighter leading-none italic text-[#003057]">{title}</h1>
                     </div>
-                    <div className="space-y-8 text-xl text-white/60 font-light leading-relaxed">
+                    <div className="space-y-8 text-xl text-[#003057]/60 font-light leading-relaxed">
                         {bio.map((p, i) => (
-                            <p key={i} dangerouslySetInnerHTML={{ __html: p.replace('Applied AI Engineer', '<span class="text-white">Applied AI Engineer</span>').replace('Georgia Tech', '<span class="text-white font-medium">Georgia Tech</span>').replace('UPenn', '<span class="text-white font-medium">UPenn</span>') }} />
+                            <p key={i} dangerouslySetInnerHTML={{ __html: p.replace('Applied AI Engineer', '<span class="text-[#003057] font-medium">Applied AI Engineer</span>').replace('Georgia Tech', '<span class="text-[#003057] font-medium">Georgia Tech</span>').replace('UPenn', '<span class="text-[#003057] font-medium">UPenn</span>') }} />
                         ))}
                         <div className="pt-8">
-                            <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-6">{highlights.title}</h4>
+                            <h4 className="text-[10px] font-bold text-[#003057]/30 uppercase tracking-[0.4em] mb-6">{highlights.title}</h4>
                             <ul className="space-y-4">
                                 {highlights.items.map((item, i) => (
                                     <li key={i} className="flex gap-4">
@@ -37,10 +37,10 @@ const About: React.FC = () => {
                         <img
                             src={image}
                             alt="Meet Doshi"
-                            className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000"
+                            className="w-full h-full object-cover grayscale brightness-100 group-hover:grayscale-0 transition-all duration-1000"
                         />
                     </div>
-                    <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
+                    <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#A4925A]/10 blur-[80px] rounded-full pointer-events-none" />
                 </div>
             </div>
 

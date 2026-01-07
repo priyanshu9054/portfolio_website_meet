@@ -13,8 +13,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <MouseProvider>
-            <div className="relative min-h-screen text-white selection:bg-white selection:text-black">
-                <Suspense fallback={<div className="fixed inset-0 bg-[#0a0a0a] -z-10" />}>
+            <div className="relative min-h-screen text-[#003057] selection:bg-[#A4925A] selection:text-white">
+                <Suspense fallback={<div className="fixed inset-0 bg-[#D6DBD4] -z-10" />}>
                     <Background3D />
                 </Suspense>
                 <div className="relative z-10">

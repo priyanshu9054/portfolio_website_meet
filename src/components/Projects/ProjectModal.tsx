@@ -17,7 +17,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, className
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-6 bg-[#003057]/95 backdrop-blur-xl ${className}`}
+            className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-6 bg-[#003057]/40 backdrop-blur-xl ${className}`}
             onClick={onClose}
         >
             <motion.div
@@ -66,7 +66,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, className
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 py-5 bg-[#003057] text-white rounded-full font-bold uppercase text-[10px] tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-[#A4925A] transition-all group"
+                                className="flex-1 py-5 bg-[#003057] text-[#F9F6E5] rounded-full font-bold uppercase text-[10px] tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-[#A4925A] transition-all group"
                             >
                                 <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
                                 GitHub Code Link

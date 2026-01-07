@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { BlogPost } from '../types';
@@ -28,8 +28,8 @@ const BlogPage = () => {
     return (
         <div className="pt-64 px-6 max-w-5xl mx-auto pb-48">
             <div className="mb-32 text-center space-y-8">
-                <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px]">Insights</span>
-                <h1 className="text-7xl md:text-[8rem] font-bold tracking-tighter leading-none">JOURNAL</h1>
+                <span className="text-[#003057]/40 font-bold uppercase tracking-[0.6em] text-[10px]">Insights</span>
+                <h1 className="text-7xl md:text-[8rem] font-bold tracking-tighter leading-none text-[#003057]">JOURNAL</h1>
             </div>
 
             <div className="space-y-8">
@@ -37,7 +37,7 @@ const BlogPage = () => {
                     <article
                         key={blog.id}
                         onClick={() => setSelectedBlog(blog)}
-                        className="bg-[#F9F6E5] p-12 rounded-[3.5rem] group cursor-pointer hover:bg-[#F9F6E5]/90 transition-all shadow-xl border border-[#D6DBD4]/20"
+                        className="bg-[#F9F6E5] p-12 rounded-[3.5rem] group cursor-pointer hover:bg-[#F9F6E5]/90 transition-all shadow-xl border border-[#003057]/5"
                     >
                         <div className="flex items-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-[#003057]/40">
                             <Calendar className="w-4 h-4" /> {blog.date}

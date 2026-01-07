@@ -18,8 +18,8 @@ const Skills: React.FC = () => {
         <section id="skills" className="py-24 px-6 relative">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20">
-                    <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4">Skills</h2>
-                    <div className="w-12 h-1 bg-blue-500 rounded-full" />
+                    <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-[#003057]">Skills</h2>
+                    <div className="w-12 h-1 bg-[#A4925A] rounded-full" />
                 </div>
 
                 <div className="space-y-16">
@@ -29,12 +29,12 @@ const Skills: React.FC = () => {
                             <SkillTag
                                 key={skill}
                                 name={skill}
-                                className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-sm text-white/70 font-medium hover:bg-white/[0.08] hover:text-white"
+                                className="px-6 py-3 bg-[#003057]/[0.03] border border-[#003057]/5 rounded-full text-sm text-[#003057]/70 font-medium hover:bg-[#003057]/[0.08] hover:text-[#003057]"
                             />
                         ))}
                     </div>
 
-                    <div className="h-px w-full bg-white/10" />
+                    <div className="h-px w-full bg-[#003057]/10" />
 
                     {/* Frameworks / Tools Group */}
                     <div className="flex flex-wrap gap-3">
@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
                             <SkillTag
                                 key={skill}
                                 name={skill}
-                                className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-sm text-white/70 font-medium hover:bg-white/[0.08] hover:text-white"
+                                className="px-6 py-3 bg-[#003057]/[0.03] border border-[#003057]/5 rounded-full text-sm text-[#003057]/70 font-medium hover:bg-[#003057]/[0.08] hover:text-[#003057]"
                             />
                         ))}
                     </div>

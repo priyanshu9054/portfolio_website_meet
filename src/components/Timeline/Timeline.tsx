@@ -7,7 +7,7 @@ const TimelineItem: React.FC<{ item: ITimelineItem; index: number }> = ({ item, 
   return (
     <div className="relative pl-12 pb-16 last:pb-0 group">
       {/* Sketch-accurate Vertical Line */}
-      <div className="absolute left-[6px] top-[14px] bottom-0 w-[1px] bg-white/10 group-last:bg-transparent" />
+      <div className="absolute left-[6px] top-[14px] bottom-0 w-[1px] bg-[#003057]/10 group-last:bg-transparent" />
 
       {/* Node Circle */}
       <motion.div
@@ -15,7 +15,7 @@ const TimelineItem: React.FC<{ item: ITimelineItem; index: number }> = ({ item, 
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="absolute left-0 top-[6px] w-[13px] h-[13px] rounded-full bg-black border-2 border-white z-10 group-hover:scale-125 transition-transform"
+        className="absolute left-0 top-[6px] w-[13px] h-[13px] rounded-full bg-[#F9F6E5] border-2 border-[#003057] z-10 group-hover:scale-125 transition-transform"
       />
 
       <motion.div
@@ -24,12 +24,12 @@ const TimelineItem: React.FC<{ item: ITimelineItem; index: number }> = ({ item, 
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: index * 0.1 }}
       >
-        <span className="text-[9px] font-bold text-white/40 tracking-[0.3em] uppercase mb-2 block">
+        <span className="text-[9px] font-bold text-[#003057]/40 tracking-[0.3em] uppercase mb-2 block">
           {item.duration}
         </span>
-        <h3 className="text-2xl font-bold mb-1 tracking-tighter text-white">{item.role}</h3>
-        <p className="text-lg font-medium text-blue-500 mb-4">{item.institution}</p>
-        <p className="text-gray-500 leading-relaxed text-base font-light">{item.description}</p>
+        <h3 className="text-2xl font-bold mb-1 tracking-tighter text-[#003057]">{item.role}</h3>
+        <p className="text-lg font-medium text-blue-600 mb-4">{item.institution}</p>
+        <p className="text-[#003057]/50 leading-relaxed text-base font-light">{item.description}</p>
       </motion.div>
     </div>
   );
@@ -39,8 +39,8 @@ const Timeline: React.FC<{ title: string; items: ITimelineItem[] }> = ({ title, 
   return (
     <div className="space-y-12">
       <div className="flex items-center gap-4 mb-16">
-        <h3 className="text-[10px] font-bold tracking-[0.6em] text-white/30 uppercase">{title}</h3>
-        <div className="h-[1px] flex-1 bg-white/5" />
+        <h3 className="text-[10px] font-bold tracking-[0.6em] text-[#003057]/30 uppercase">{title}</h3>
+        <div className="h-[1px] flex-1 bg-[#003057]/5" />
       </div>
       <div className="relative pt-4">
         {items.map((item, idx) => (
