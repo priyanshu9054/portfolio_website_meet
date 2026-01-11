@@ -30,27 +30,20 @@ const SkillMarquee: React.FC = () => {
               style={{ '--logo-color': logo.color } as React.CSSProperties}
             >
               {/* Card Container */}
-              <div className="flex flex-col items-center gap-3 px-4 py-5 rounded-2xl bg-[#003057]/[0.02] border border-[#003057]/5 backdrop-blur-sm
-                            hover:bg-[#003057]/[0.06] hover:border-[#003057]/10 hover:scale-105 
-                            transition-all duration-500 ease-out min-w-[90px] md:min-w-[100px]">
+              <div className="flex flex-col items-center gap-3 px-4 py-5 transition-all duration-500 ease-out min-w-[90px] md:min-w-[100px] hover:scale-105">
 
                 {/* Icon */}
                 <div className="w-12 h-12 md:w-14 md:h-14 grayscale group-hover/logo:grayscale-0 transition-all duration-500">
                   <img src={logo.image} alt={logo.name} className="w-full h-full object-contain" />
                 </div>
 
-                {/* Name Label */}
-                <span className="text-xs md:text-sm font-medium text-[#003057]/30 group-hover/logo:text-[#003057]/80 
-                               transition-colors duration-500 tracking-wide">
+                {/* Name Label appears only on hover */}
+                <span className="text-xs md:text-sm font-medium text-[#003057]/30 tracking-wide opacity-0 group-hover/logo:opacity-100 
+                               transition-all duration-300 pointer-events-none">
                   {logo.name}
                 </span>
               </div>
 
-              {/* Glow Effect */}
-              <div
-                className="absolute -inset-4 bg-[var(--logo-color)] opacity-0 group-hover/logo:opacity-15 
-                          blur-[50px] rounded-3xl transition-opacity duration-700 -z-10"
-              />
             </div>
           ))}
         </motion.div>
