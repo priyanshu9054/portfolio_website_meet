@@ -20,21 +20,21 @@ const Skills: React.FC = () => {
     const categories = ['technical', 'framework'].filter(cat => groupedSkills[cat]);
 
     return (
-        <section id="skills" className="pt-32 pb-24 px-6 relative">
+        <section id="skills" className="pt-32 pb-24 px-6 relative bg-transparent">
             <div className="max-w-7xl mx-auto">
                 <SectionHeader titlePrimary="SKILLS" />
 
                 <div className="space-y-16">
                     {categories.map((category, idx) => (
                         <div key={category}>
-                            {idx > 0 && <div className="h-px w-full bg-[#003057]/10 mb-16" />}
+                            {idx > 0 && <div className="h-px w-full bg-white/10 mb-16" />}
                             <div className="flex flex-wrap gap-3">
                                 {groupedSkills[category].map((skill) => (
                                     <SkillTag
                                         key={skill.id}
                                         id={skill.id}
                                         label={skill.label}
-                                        className="px-6 py-3 bg-[#003057]/[0.03] border border-[#003057]/5 rounded-full text-sm text-[#003057]/70 font-medium hover:bg-[#003057]/[0.08] hover:text-[#003057] hover:border-[#003057]/60 hover:ring-1 hover:ring-[#003057]/30 hover:scale-[1.03]"
+                                        className="px-6 py-3 bg-white/[0.06] border border-white/10 rounded-full text-sm text-white/80 font-medium hover:bg-[#0a192f]/60 hover:text-white hover:border-[#2563eb]/50 hover:ring-1 hover:ring-[#2563eb]/30 hover:scale-[1.03] backdrop-blur-sm transition-all duration-300"
                                     />
                                 ))}
                             </div>

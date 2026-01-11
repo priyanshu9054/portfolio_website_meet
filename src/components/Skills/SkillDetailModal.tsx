@@ -41,7 +41,7 @@ const SkillDetailModal: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-6 bg-[#003057]/40 backdrop-blur-xl"
+                    className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-6 bg-black/60 backdrop-blur-xl"
                     onClick={closeSkill}
                 >
                     <motion.div
@@ -49,17 +49,17 @@ const SkillDetailModal: React.FC = () => {
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         onClick={(e) => e.stopPropagation()}
-                        className="bg-[#F9F6E5] w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-[32px] md:rounded-[48px] border border-[#D6DBD4]/20 shadow-2xl relative flex flex-col"
+                        className="bg-[#0d1117] w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-[32px] md:rounded-[48px] border border-white/10 shadow-2xl shadow-black/50 relative flex flex-col"
                     >
                         {/* Header */}
-                        <div className="sticky top-0 z-10 bg-[#F9F6E5]/90 backdrop-blur-lg border-b border-[#003057]/5 p-8 flex items-center justify-between">
+                        <div className="sticky top-0 z-10 bg-[#0d1117]/90 backdrop-blur-lg border-b border-white/10 p-8 flex items-center justify-between">
                             <div>
-                                <span className="text-[#003057]/40 font-bold uppercase tracking-[0.2em] text-xs mb-2 block">Skill</span>
-                                <h2 className="text-4xl md:text-5xl font-bold text-[#003057] tracking-tighter">{skill.label}</h2>
+                                <span className="text-[#3b82f6] font-bold uppercase tracking-[0.2em] text-xs mb-2 block">Skill</span>
+                                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter">{skill.label}</h2>
                             </div>
                             <button
                                 onClick={closeSkill}
-                                className="p-3 bg-[#003057]/5 hover:bg-[#003057]/10 rounded-full border border-[#003057]/10 text-[#003057] transition-colors"
+                                className="p-3 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 text-white transition-colors"
                             >
                                 <X className="w-6 h-6" />
                             </button>
@@ -69,8 +69,8 @@ const SkillDetailModal: React.FC = () => {
                             {/* Associated Projects Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-10">
-                                    <h3 className="text-[10px] font-bold text-[#003057] uppercase tracking-[0.4em]">Projects</h3>
-                                    <div className="h-px flex-1 bg-[#003057]/5" />
+                                    <h3 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.4em]">Projects</h3>
+                                    <div className="h-px flex-1 bg-white/10" />
                                 </div>
 
                                 {projects.length > 0 ? (
@@ -79,14 +79,14 @@ const SkillDetailModal: React.FC = () => {
                                             <div
                                                 key={project.id}
                                                 onClick={() => setViewProject(project)}
-                                                className="group cursor-pointer bg-white/50 border border-[#003057]/5 rounded-[2rem] p-6 hover:bg-white hover:shadow-xl hover:border-[#003057]/10 transition-all duration-500"
+                                                className="group cursor-pointer bg-white/5 border border-white/10 rounded-[2rem] p-6 hover:bg-white/[0.08] hover:shadow-xl hover:border-[#2563eb]/30 transition-all duration-500"
                                             >
-                                                <div className="aspect-video rounded-2xl overflow-hidden mb-6 bg-[#003057]/5">
-                                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                                                <div className="aspect-video rounded-2xl overflow-hidden mb-6 bg-white/5">
+                                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
                                                 </div>
                                                 <div className="space-y-3">
-                                                    <h4 className="text-xl font-bold text-[#003057] tracking-tight">{project.title}</h4>
-                                                    <p className="text-[#003057]/60 text-sm line-clamp-2 mb-4">{project.description}</p>
+                                                    <h4 className="text-xl font-bold text-white tracking-tight group-hover:text-[#60a5fa] transition-colors">{project.title}</h4>
+                                                    <p className="text-white/60 text-sm line-clamp-2 mb-4">{project.description}</p>
                                                     <div className="flex flex-wrap gap-2">
                                                         {project.skills.slice(0, 3).map(skillId => {
                                                             const sMeta = (skillsDataRaw as Skill[]).find(s => s.id === skillId);
@@ -96,7 +96,7 @@ const SkillDetailModal: React.FC = () => {
                                                                     id={skillId}
                                                                     label={sMeta?.label || skillId}
                                                                     interactive={false}
-                                                                    className="text-[10px] uppercase tracking-wider text-[#003057]/40 border border-[#003057]/10 px-2 py-1 rounded-full"
+                                                                    className="text-[10px] uppercase tracking-wider text-white/50 border border-white/10 px-2 py-1 rounded-full"
                                                                 />
                                                             );
                                                         })}
@@ -106,15 +106,15 @@ const SkillDetailModal: React.FC = () => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <p className="text-[#003057]/30 italic">No projects explicitly linked to {skill.label}.</p>
+                                    <p className="text-white/40 italic">No projects explicitly linked to {skill.label}.</p>
                                 )}
                             </section>
 
                             {/* Journal Entries Section */}
                             <section className="pb-8">
                                 <div className="flex items-center gap-4 mb-10">
-                                    <h3 className="text-[10px] font-bold text-[#003057] uppercase tracking-[0.4em]">Blogs</h3>
-                                    <div className="h-px flex-1 bg-[#003057]/5" />
+                                    <h3 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.4em]">Blogs</h3>
+                                    <div className="h-px flex-1 bg-white/10" />
                                 </div>
 
                                 {blogs.length > 0 ? (
@@ -123,19 +123,19 @@ const SkillDetailModal: React.FC = () => {
                                             <div
                                                 key={blog.id}
                                                 onClick={() => setViewBlog(blog)}
-                                                className="group cursor-pointer p-8 bg-[#003057]/[0.02] border border-[#003057]/5 rounded-[2.5rem] hover:bg-[#F9F6E5] hover:shadow-lg transition-all"
+                                                className="group cursor-pointer p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/[0.08] hover:shadow-lg hover:border-[#2563eb]/30 transition-all"
                                             >
-                                                <span className="text-[10px] font-bold text-[#A4925A] uppercase tracking-widest mb-4 block">{blog.date}</span>
-                                                <h4 className="text-2xl font-bold text-[#003057] tracking-tight mb-4 group-hover:translate-x-2 transition-transform">{blog.title}</h4>
-                                                <p className="text-[#003057]/70 text-base font-light mb-6 line-clamp-2">{blog.excerpt}</p>
-                                                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#003057]">
+                                                <span className="text-[10px] font-bold text-[#3b82f6] uppercase tracking-widest mb-4 block">{blog.date}</span>
+                                                <h4 className="text-2xl font-bold text-white tracking-tight mb-4 group-hover:translate-x-2 group-hover:text-[#60a5fa] transition-all">{blog.title}</h4>
+                                                <p className="text-white/60 text-base font-light mb-6 line-clamp-2">{blog.excerpt}</p>
+                                                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#3b82f6]">
                                                     Open Entry <ArrowRight className="w-4 h-4" />
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 ) : (
-                                    <p className="text-[#003057]/30 italic">No journal entries found for {skill.label}.</p>
+                                    <p className="text-white/40 italic">No journal entries found for {skill.label}.</p>
                                 )}
                             </section>
                         </div>

@@ -16,16 +16,16 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div className={`text-left space-y-6 mb-32 ${className}`}>
       {label && (
-        <span className="text-[#003057]/40 font-bold uppercase tracking-[0.6em] text-[10px] block">
+        <span className="text-[#3b82f6] font-bold uppercase tracking-[0.6em] text-[10px] block">
           {label}
         </span>
       )}
-      <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-[#003057] uppercase">
+      <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white uppercase">
         {titlePrimary}
         {titleAccent && (
           <>
             <br />
-            <span className="italic text-[#003057]/10">{titleAccent}</span>
+            <span className="italic text-white/15">{titleAccent}</span>
           </>
         )}
       </h2>
@@ -34,4 +34,3 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 };
 
 export default SectionHeader;
-
