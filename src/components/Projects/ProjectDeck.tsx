@@ -53,7 +53,7 @@ const StickyProjectCard: React.FC<{
 
           <div className="mt-8 flex flex-wrap items-center gap-6">
             <div className="flex items-center justify-center px-10 py-5 bg-[#003057] hover:bg-[#A4925A] text-white rounded-full text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-500">
-              View case study
+              View Project
             </div>
 
             {project.github && (
@@ -65,8 +65,8 @@ const StickyProjectCard: React.FC<{
           </div>
         </div>
 
-        {/* Right Column (Image + Metrics) */}
-        <div className="md:w-[55%] h-full p-4 md:p-6 bg-[#003057]/5 flex flex-col gap-4">
+        {/* Right Column (Image only) */}
+        <div className="md:w-[55%] h-full p-4 md:p-6 bg-[#003057]/5 flex flex-col">
           <div className="flex-1 rounded-[24px] overflow-hidden relative">
             <img
               src={project.image}
@@ -76,17 +76,6 @@ const StickyProjectCard: React.FC<{
             <div className="absolute inset-0 bg-gradient-to-t from-[#003057]/40 via-transparent to-transparent opacity-60" />
             <div className="absolute top-8 right-8 p-4 bg-[#F9F6E5]/80 backdrop-blur-xl rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
               <ArrowUpRight className="w-6 h-6 text-[#003057]" />
-            </div>
-          </div>
-
-          <div className="h-32 flex gap-4">
-            <div className="flex-1 bg-white glass rounded-[24px] p-6 flex flex-col justify-center text-left">
-              <span className="text-[#003057]/40 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Reach</span>
-              <span className="text-[#003057] text-2xl md:text-3xl font-bold tracking-tighter">{(project as any).engagement || '0'}</span>
-            </div>
-            <div className="flex-1 bg-white glass rounded-[24px] p-6 flex flex-col justify-center text-left">
-              <span className="text-[#003057]/40 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Rating</span>
-              <span className="text-[#003057] text-2xl md:text-3xl font-bold tracking-tighter">{(project as any).satisfaction || '0'}</span>
             </div>
           </div>
         </div>
