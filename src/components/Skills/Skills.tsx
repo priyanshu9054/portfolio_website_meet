@@ -34,7 +34,7 @@ const Skills: React.FC = () => {
                                         key={skill.id}
                                         id={skill.id}
                                         label={skill.label}
-                                        className="px-6 py-3 bg-[#003057]/[0.03] border border-[#003057]/5 rounded-full text-sm text-[#003057]/70 font-medium hover:bg-[#003057]/[0.08] hover:text-[#003057]"
+                                        className="px-6 py-3 bg-[#003057]/[0.03] border border-[#003057]/5 rounded-full text-sm text-[#003057]/70 font-medium hover:bg-[#003057]/[0.08] hover:text-[#003057] hover:border-[#003057]/60 hover:ring-1 hover:ring-[#003057]/30 hover:scale-[1.03]"
                                     />
                                 ))}
                             </div>

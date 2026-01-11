@@ -21,7 +21,7 @@ const SkillTag: React.FC<SkillTagProps> = ({ id, label, className = "", interact
     return (
         <span
             onClick={handleClick}
-            className={`${interactive ? 'cursor-pointer hover:bg-[#003057]/5' : 'cursor-default'} transition-all ${className}`}
+            className={`${interactive ? 'cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003057]/40' : 'cursor-default'} transform transition-all duration-200 ${className}`}
         >
             {label}
         </span>

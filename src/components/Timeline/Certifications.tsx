@@ -14,9 +14,10 @@ const CertificationCard: React.FC<{ cert: Certification; index: number }> = ({ c
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="glass group p-8 rounded-[2.5rem] flex flex-col h-full hover:bg-[#003057]/[0.02] hover:border-[#003057]/20 transition-all duration-500 relative overflow-hidden bg-white/40"
+      className="glass group p-8 rounded-[2.5rem] flex flex-col h-full relative overflow-hidden bg-white/40 shadow-[0_20px_35px_rgba(3,48,87,0.08)] transition-all duration-500 hover:bg-[#003057]/[0.02] hover:border-[#003057]/20 hover:shadow-[0_25px_55px_rgba(3,48,87,0.18),_0_0_35px_rgba(164,146,90,0.25)] before:content-[''] before:absolute before:-inset-4 before:rounded-[2.5rem] before:bg-[radial-gradient(circle,_rgba(164,146,90,0.35)_0%,_rgba(164,146,90,0)_60%)] before:opacity-0 before:transition-opacity before:duration-500 before:pointer-events-none before:-z-10 group-hover:before:opacity-60"
     >
       <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-x-4 group-hover:translate-x-0">
         <ExternalLink className="w-5 h-5 text-blue-500" />
@@ -32,7 +33,7 @@ const CertificationCard: React.FC<{ cert: Certification; index: number }> = ({ c
         </div>
         <div className="flex-1">
           <span className="text-[9px] font-bold text-[#003057]/30 uppercase tracking-[0.3em] mb-2 block">{cert.issuer}</span>
-          <h3 className="text-xl font-bold tracking-tight text-[#003057] leading-tight group-hover:text-[#A4925A] transition-colors duration-500">
+          <h3 className="text-xl font-bold tracking-tight text-[#003057] leading-tight group-hover:text-[#00182a] transition-colors duration-500">
             {cert.title}
           </h3>
         </div>
