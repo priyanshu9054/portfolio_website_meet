@@ -33,7 +33,7 @@ const EducationCard: React.FC<{ item: EducationItem; index: number }> = ({ item,
             style={{ transform: offset }}
         >
             {/* Logo Container */}
-            <div className="relative h-24 w-full flex items-center justify-center mb-4">
+            <div className="relative h-32 w-full flex items-center justify-center mb-4">
                 {item.logo ? (
                     <img
                         src={item.logo}
