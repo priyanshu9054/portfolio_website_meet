@@ -4,7 +4,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription?: string;
-  tags: string[];
+  skills: string[];
   image: string;
   link?: string;
   github?: string;
@@ -32,7 +32,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
-  tags: string[];
+  skills: string[];
   content: string;
 }
 

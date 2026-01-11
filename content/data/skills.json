@@ -1,14 +1,163 @@
 [
-    "Python",
-    "PyTorch",
-    "TensorFlow",
-    "MATLAB",
-    "C++",
-    "Embedded C",
-    "RL",
-    "MARL",
-    "ROS",
-    "OpenCV",
-    "CUDA",
-    "FPGA"
+    {
+        "id": "python",
+        "label": "Python",
+        "category": "technical",
+        "enabled": true,
+        "order": 1
+    },
+    {
+        "id": "cpp",
+        "label": "C++",
+        "category": "technical",
+        "enabled": true,
+        "order": 2
+    },
+    {
+        "id": "embedded-c",
+        "label": "Embedded C",
+        "category": "technical",
+        "enabled": true,
+        "order": 3
+    },
+    {
+        "id": "rl",
+        "label": "Reinforcement Learning",
+        "category": "technical",
+        "enabled": true,
+        "order": 4
+    },
+    {
+        "id": "marl",
+        "label": "Multi-Agent RL",
+        "category": "technical",
+        "enabled": true,
+        "order": 5
+    },
+    {
+        "id": "dynamics-control",
+        "label": "Dynamics & Control",
+        "category": "technical",
+        "enabled": true,
+        "order": 6
+    },
+    {
+        "id": "robotics",
+        "label": "Robotics",
+        "category": "technical",
+        "enabled": true,
+        "order": 7
+    },
+    {
+        "id": "ros",
+        "label": "ROS",
+        "category": "technical",
+        "enabled": true,
+        "order": 8
+    },
+    {
+        "id": "cuda",
+        "label": "CUDA",
+        "category": "technical",
+        "enabled": true,
+        "order": 9
+    },
+    {
+        "id": "fpga",
+        "label": "FPGA",
+        "category": "technical",
+        "enabled": true,
+        "order": 10
+    },
+    {
+        "id": "matlab",
+        "label": "MATLAB",
+        "category": "technical",
+        "enabled": true,
+        "order": 11
+    },
+    {
+        "id": "linear-algebra",
+        "label": "Linear Algebra",
+        "category": "technical",
+        "enabled": true,
+        "order": 12
+    },
+    {
+        "id": "pytorch",
+        "label": "PyTorch",
+        "category": "framework",
+        "enabled": true,
+        "order": 101
+    },
+    {
+        "id": "tensorflow",
+        "label": "TensorFlow",
+        "category": "framework",
+        "enabled": true,
+        "order": 102
+    },
+    {
+        "id": "openai",
+        "label": "OpenAI",
+        "category": "framework",
+        "enabled": true,
+        "order": 103
+    },
+    {
+        "id": "huggingface",
+        "label": "HuggingFace",
+        "category": "framework",
+        "enabled": true,
+        "order": 104
+    },
+    {
+        "id": "docker",
+        "label": "Docker",
+        "category": "framework",
+        "enabled": true,
+        "order": 105
+    },
+    {
+        "id": "aws",
+        "label": "AWS",
+        "category": "framework",
+        "enabled": true,
+        "order": 106
+    },
+    {
+        "id": "sql",
+        "label": "SQL",
+        "category": "framework",
+        "enabled": true,
+        "order": 107
+    },
+    {
+        "id": "opencv",
+        "label": "OpenCV",
+        "category": "framework",
+        "enabled": true,
+        "order": 108
+    },
+    {
+        "id": "git",
+        "label": "Git",
+        "category": "framework",
+        "enabled": true,
+        "order": 109
+    },
+    {
+        "id": "linux",
+        "label": "Linux",
+        "category": "framework",
+        "enabled": true,
+        "order": 110
+    },
+    {
+        "id": "simulink",
+        "label": "Simulink",
+        "category": "framework",
+        "enabled": true,
+        "order": 111
+    }
 ]

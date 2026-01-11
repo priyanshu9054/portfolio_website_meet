@@ -1,26 +1,26 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface SkillContextType {
-    selectedSkill: string | null;
-    openSkill: (skill: string) => void;
+    selectedSkillId: string | null;
+    openSkill: (id: string) => void;
     closeSkill: () => void;
 }
 
 const SkillContext = createContext<SkillContextType | undefined>(undefined);
 
 export const SkillProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+    const [selectedSkillId, setSelectedSkillId] = useState<string | null>(null);
 
-    const openSkill = (skill: string) => {
-        setSelectedSkill(skill);
+    const openSkill = (id: string) => {
+        setSelectedSkillId(id);
     };
 
     const closeSkill = () => {
-        setSelectedSkill(null);
+        setSelectedSkillId(null);
     };
 
     return (
-        <SkillContext.Provider value={{ selectedSkill, openSkill, closeSkill }}>
+        <SkillContext.Provider value={{ selectedSkillId, openSkill, closeSkill }}>
             {children}
         </SkillContext.Provider>
     );

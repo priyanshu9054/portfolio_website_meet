@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { X, Calendar } from 'lucide-react';
 import { BlogPost } from '../../types';
+import { getSkillLabel } from '../../utils/contentUtils';
 import SkillTag from '../ui/SkillTag';
 
 interface BlogModalProps {
@@ -36,8 +37,8 @@ const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose, className = "" }) 
                     </div>
                     <h2 className="text-5xl md:text-6xl font-bold mb-12 tracking-tighter leading-none text-[#003057]">{blog.title}</h2>
                     <div className="flex flex-wrap gap-3 mb-12">
-                        {blog.tags.map(t => (
-                            <SkillTag key={t} name={t} className="px-4 py-1.5 bg-[#003057]/5 border border-[#003057]/10 text-[#003057] rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-[#003057]/10" />
+                        {blog.skills.map(id => (
+                            <SkillTag key={id} id={id} label={getSkillLabel(id)} className="px-4 py-1.5 bg-[#003057]/5 border border-[#003057]/10 text-[#003057] rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-[#003057]/10" />
                         ))}
                     </div>
                 </div>

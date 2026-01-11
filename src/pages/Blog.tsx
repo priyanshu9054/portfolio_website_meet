@@ -6,9 +6,12 @@ import { BlogPost } from '../types';
 import BlogModal from '../components/Blog/BlogModal';
 import { parseMarkdown } from '../utils/markdown';
 import SkillTag from '../components/ui/SkillTag';
+import skillsDataRaw from '../../content/data/skills.json';
+import { Skill } from '../types/skills';
 
 const BlogPage = () => {
     const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
+    const skillsData = skillsDataRaw as Skill[];
 
     // Load all markdown files from content/posts
     const modules = import.meta.glob('../../content/posts/*.md', { query: '?raw', import: 'default', eager: true });
@@ -19,7 +22,7 @@ const BlogPage = () => {
             id: path.split('/').pop()?.replace('.md', '') || '',
             title: frontmatter.title,
             date: frontmatter.date,
-            tags: frontmatter.tags || [],
+            skills: frontmatter.skills || [],
             excerpt: frontmatter.excerpt,
             content: body,
         } as BlogPost;
@@ -43,7 +46,10 @@ const BlogPage = () => {
                             <Calendar className="w-4 h-4" /> {blog.date}
                             <span className="w-1 h-1 bg-[#003057]/10 rounded-full" />
                             <div className="flex gap-4">
-                                {blog.tags.map(t => <SkillTag key={t} name={t} className="text-[#A4925A] hover:text-[#003057]" />)}
+                                {blog.skills.map(id => {
+                                    const skill = skillsData.find(s => s.id === id);
+                                    return <SkillTag key={id} id={id} label={skill?.label || id} className="text-[#A4925A] hover:text-[#003057]" />;
+                                })}
                             </div>
                         </div>
                         <h2 className="text-4xl font-bold mb-6 tracking-tighter group-hover:translate-x-4 transition-transform duration-500 text-[#003057]">{blog.title}</h2>

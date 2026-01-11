@@ -1,9 +1,16 @@
 import projectsData from '../../content/data/projects.json';
+import skillsDataRaw from '../../content/data/skills.json';
 import { parseMarkdown } from './markdown';
 import { BlogPost, Project } from '../types';
+import { Skill } from '../types/skills';
 
 // Load blogs globally using Vite's glob import
 const blogModules = import.meta.glob('../../content/posts/*.md', { query: '?raw', import: 'default', eager: true });
+
+export const getSkillLabel = (id: string): string => {
+  const skill = (skillsDataRaw as Skill[]).find(s => s.id === id);
+  return skill?.label || id;
+};
 
 export const getAllBlogs = (): BlogPost[] => {
   return Object.entries(blogModules).map(([path, content]) => {
@@ -12,26 +19,24 @@ export const getAllBlogs = (): BlogPost[] => {
       id: path.split('/').pop()?.replace('.md', '') || '',
       title: frontmatter.title,
       date: frontmatter.date,
-      tags: frontmatter.tags || [],
+      skills: frontmatter.skills || [],
       excerpt: frontmatter.excerpt,
       content: body,
     } as BlogPost;
   });
 };
 
-export const getProjectsBySkill = (skill: string): Project[] => {
-  if (!skill) return [];
-  const normalizedSkill = skill.toLowerCase();
+export const getProjectsBySkill = (skillId: string): Project[] => {
+  if (!skillId) return [];
   return (projectsData as Project[]).filter(project => 
-    project.tags.some(tag => tag.toLowerCase() === normalizedSkill)
+    project.skills.includes(skillId)
   );
 };
 
-export const getBlogsBySkill = (skill: string): BlogPost[] => {
-  if (!skill) return [];
-  const normalizedSkill = skill.toLowerCase();
+export const getBlogsBySkill = (skillId: string): BlogPost[] => {
+  if (!skillId) return [];
   const allBlogs = getAllBlogs();
   return allBlogs.filter(blog => 
-    blog.tags.some(tag => tag.toLowerCase() === normalizedSkill)
+    blog.skills.includes(skillId)
   );
 };

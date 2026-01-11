@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../../types';
 import { X, Github } from 'lucide-react';
+import { getSkillLabel } from '../../utils/contentUtils';
 import SkillTag from '../ui/SkillTag';
 
 interface ProjectModalProps {
@@ -47,8 +48,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, className
                         <span className="text-[#A4925A] font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">Project Brief</span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter leading-none text-[#003057]">{project.title}</h2>
                         <div className="flex flex-wrap gap-3 mb-8">
-                            {project.tags.map(tag => (
-                                <SkillTag key={tag} name={tag} className="px-3 py-1 bg-[#003057]/5 border border-[#003057]/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-[#003057]/40 hover:text-[#003057]" />
+                            {project.skills.map(id => (
+                                <SkillTag key={id} id={id} label={getSkillLabel(id)} className="px-3 py-1 bg-[#003057]/5 border border-[#003057]/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-[#003057]/40 hover:text-[#003057]" />
                             ))}
                         </div>
                     </div>

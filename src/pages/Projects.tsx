@@ -2,18 +2,25 @@ import { useState } from 'react';
 import { Search, Github } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import projectsData from "../../content/data/projects.json";
+import skillsDataRaw from "../../content/data/skills.json";
 import { Project } from '../types';
+import { Skill } from '../types/skills';
 import ProjectModal from '../components/Projects/ProjectModal';
 import SkillTag from '../components/ui/SkillTag';
 
 const ProjectsPage = () => {
     const [query, setQuery] = useState('');
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const skillsData = skillsDataRaw as Skill[];
 
-    const filtered = projectsData.filter((p: Project) =>
-        p.title.toLowerCase().includes(query.toLowerCase()) ||
-        p.tags.some(t => t.toLowerCase().includes(query.toLowerCase()))
-    );
+    const filtered = (projectsData as Project[]).filter((p: Project) => {
+        const titleMatch = p.title.toLowerCase().includes(query.toLowerCase());
+        const skillMatch = p.skills.some(id => {
+            const skill = skillsData.find(s => s.id === id);
+            return skill?.label.toLowerCase().includes(query.toLowerCase());
+        });
+        return titleMatch || skillMatch;
+    });
 
     return (
         <div className="pt-64 px-6 max-w-7xl mx-auto pb-48">
@@ -46,7 +53,10 @@ const ProjectsPage = () => {
                         <div className="px-6 pb-6">
                             <h3 className="text-2xl font-bold mb-4 tracking-tighter text-[#003057]">{project.title}</h3>
                             <div className="flex flex-wrap gap-2 mb-6">
-                                {project.tags.map(t => <SkillTag key={t} name={t} className="text-[10px] uppercase font-bold tracking-widest text-[#003057]/40 hover:text-[#003057]" />)}
+                                {project.skills.map(id => {
+                                    const skill = skillsData.find(s => s.id === id);
+                                    return <SkillTag key={id} id={id} label={skill?.label || id} className="text-[10px] uppercase font-bold tracking-widest text-[#003057]/40 hover:text-[#003057]" />;
+                                })}
                             </div>
                             {project.github && (
                                 <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-blue-500 hover:text-white transition-colors">

@@ -97,9 +97,18 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onProjectSelect }) => {
                           <div>
                             <h4 className="text-[10px] font-bold text-[#003057]/30 uppercase tracking-[0.4em] mb-6">Tools & Stack</h4>
                             <div className="flex flex-wrap gap-2">
-                              {card.tools.map(tool => (
-                                <SkillTag key={tool} name={tool} className="px-4 py-2 bg-[#003057]/5 border border-[#003057]/5 rounded-full text-[11px] text-[#003057]/70 font-medium hover:bg-[#003057]/10 hover:text-[#003057]" />
-                              ))}
+                              {card.tools.map(tool => {
+                                const id = tool.toLowerCase().replace(/\s+/g, '-');
+                                return (
+                                  <SkillTag
+                                    key={tool}
+                                    id={id}
+                                    label={tool}
+                                    interactive={false}
+                                    className="px-4 py-2 bg-[#003057]/5 border border-[#003057]/5 rounded-full text-[11px] text-[#003057]/70 font-medium hover:bg-[#003057]/10 hover:text-[#003057]"
+                                  />
+                                );
+                              })}
                             </div>
                           </div>
                         </div>
