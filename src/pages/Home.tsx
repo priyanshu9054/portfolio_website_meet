@@ -28,10 +28,14 @@ const Home: React.FC = () => {
             {/* Continue Document Flow */}
             <div className="relative z-20">
                 <Skills />
-                <Certifications />
             </div>
 
             <Education items={timelineData.education} />
+
+            <div className="relative z-20">
+                <Certifications />
+            </div>
+
             <Experience items={timelineData.experience} />
 
             <div className="pb-20" />

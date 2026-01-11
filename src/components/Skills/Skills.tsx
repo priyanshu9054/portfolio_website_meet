@@ -1,6 +1,7 @@
 import skillsDataRaw from '../../../content/data/skills.json';
 import { Skill } from '../../types/skills';
 import SkillTag from '../ui/SkillTag';
+import SectionHeader from '../ui/SectionHeader';
 
 const Skills: React.FC = () => {
     const skills = (skillsDataRaw as Skill[])
@@ -19,12 +20,9 @@ const Skills: React.FC = () => {
     const categories = ['technical', 'framework'].filter(cat => groupedSkills[cat]);
 
     return (
-        <section id="skills" className="py-24 px-6 relative">
+        <section id="skills" className="pt-32 pb-24 px-6 relative">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-20">
-                    <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-[#003057]">Skills</h2>
-                    <div className="w-12 h-1 bg-[#A4925A] rounded-full" />
-                </div>
+                <SectionHeader titlePrimary="SKILLS" />
 
                 <div className="space-y-16">
                     {categories.map((category, idx) => (

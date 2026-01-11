@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SectionHeader from '../ui/SectionHeader';
 
 interface ExperienceItem {
     id: string;
@@ -48,11 +49,7 @@ const ExperienceRow: React.FC<{ item: ExperienceItem; index: number }> = ({ item
 const Experience: React.FC<ExperienceProps> = ({ items }) => {
     return (
         <section className="pb-24 max-w-7xl mx-auto px-6">
-            <div className="flex items-center gap-4 mb-12">
-                <h2 className="text-sm font-bold tracking-[0.2em] text-[#003057]/40 uppercase">Experience</h2>
-                <div className="h-[1px] flex-1 bg-[#003057]/10" />
-            </div>
-
+            <SectionHeader titlePrimary="EXPERIENCE" />
             <div className="flex flex-col">
                 {items.map((item, idx) => (
                     <ExperienceRow key={item.id} item={item} index={idx} />

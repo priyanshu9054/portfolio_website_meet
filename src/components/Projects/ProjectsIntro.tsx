@@ -1,13 +1,13 @@
 
 import React from 'react';
+import SectionHeader from '../ui/SectionHeader';
 
 const ProjectsIntro: React.FC = () => {
     return (
-        <section className="pt-48 pb-24 px-6 flex flex-col items-center justify-center text-center">
-            <span className="text-white/40 font-bold uppercase tracking-[0.6em] text-[10px] mb-6">Work Archives</span>
-            <h2 className="text-[15vw] font-black tracking-tighter text-white select-none leading-none uppercase">
-                PROJECTS
-            </h2>
+        <section className="pt-48 pb-16 px-6">
+            <div className="max-w-7xl mx-auto">
+                <SectionHeader titlePrimary="PROJECTS" />
+            </div>
         </section>
     );
 };

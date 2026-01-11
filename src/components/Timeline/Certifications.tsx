@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import certifications from '../../../content/data/certifications.json';
 import { Certification } from '../../types';
 import { ExternalLink } from 'lucide-react';
+import SectionHeader from '../ui/SectionHeader';
 
 const CertificationCard: React.FC<{ cert: Certification; index: number }> = ({ cert, index }) => {
   return (
@@ -61,18 +62,13 @@ const Certifications: React.FC = () => {
   return (
     <section className="py-48 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-32 space-y-6">
-          <span className="text-[#003057]/40 font-bold uppercase tracking-[0.6em] text-[10px]">Accreditations</span>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-[#003057]">
-            QUALIFIED <br /> <span className="text-[#003057]/10 italic">FOUNDATIONS</span>
-          </h2>
-        </div>
+        <SectionHeader titlePrimary="ACCREDITATIONS" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certifications.map((cert: Certification, idx: number) => (
-            <CertificationCard key={cert.id} cert={cert} index={idx} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {certifications.map((cert: Certification, idx: number) => (
+          <CertificationCard key={cert.id} cert={cert} index={idx} />
+        ))}
       </div>
     </section>
   );

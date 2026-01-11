@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SectionHeader from '../ui/SectionHeader';
 
 interface EducationItem {
     id: string;
@@ -69,10 +70,9 @@ const Education: React.FC<EducationProps> = ({ items }) => {
     return (
         <section className="relative py-20 overflow-hidden">
             {/* Header: Placed above haloContainer */}
-            <div className="relative z-20 px-6 mb-8">
-                <div className="max-w-7xl mx-auto flex items-center gap-4">
-                    <h2 className="text-sm font-bold tracking-[0.2em] text-[#003057]/40 uppercase">Affiliations</h2>
-                    <div className="h-[1px] flex-1 bg-[#003057]/10" />
+            <div className="relative z-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <SectionHeader titlePrimary="EDUCATION" />
                 </div>
             </div>
 
